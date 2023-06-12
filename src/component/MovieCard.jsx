@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function MovieCard({ movie }) {
   return (
-    <div className="movie_card ">
+    <div className="movie_card my-2">
       <Link href={movie.movieLink}>
         <Image
           src={movie.imageLink}
@@ -11,6 +11,9 @@ export default function MovieCard({ movie }) {
           width={400}
           height={400}
           className="h-96 w-[290px] object-cover cursor-pointer rounded-lg"
+          loading="lazy"
+          placeholder="blur"
+          blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8cu9MPQAISwMPjMt6zQAAAABJRU5ErkJggg=="
         />
       </Link>
     </div>
