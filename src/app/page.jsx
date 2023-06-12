@@ -1,9 +1,11 @@
 import Feed from '@/component/Feed';
+import MovieList from '@/component/MovieList';
 
 const Home = () => {
   return (
-    <section className="flex justify-between ">
+    <section className="flex  flex-col">
       <Feed />
+      <MovieList />
     </section>
   );
 };

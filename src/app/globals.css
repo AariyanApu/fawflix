@@ -70,12 +70,15 @@
 }
 
 /* Custom Tailwind */
+.nav {
+  @apply flex justify-between items-center;
+}
 .app {
   @apply relative z-10  max-w-7xl mx-auto mt-2;
 }
 
 .search_input {
-  @apply w-96 h-12 mt-3 rounded-md border border-gray-200 bg-white py-2.5  pl-5 pr-12 text-sm shadow-lg font-medium focus:border-black focus:outline-none focus:ring-0;
+  @apply w-96 h-12 mt-3 rounded-md border border-gray-200 bg-white py-2.5  pl-5 pr-12 text-sm shadow-lg font-medium focus:border-black focus:outline-none focus:ring-0 mr-2.5;
 }
 
 .copy_btn {
@@ -110,7 +113,7 @@
 /* swiper css  */
 
 .swiper {
-  width: 1400px;
+  width: 1250px;
   height: 500px;
   margin-top: 8px;
 }

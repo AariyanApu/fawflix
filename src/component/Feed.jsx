@@ -5,9 +5,9 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
+import { slideImages } from '@/utils/data';
 import Image from 'next/image';
 import Link from 'next/link';
-import { slideImages } from '../../utils/data';
 
 const Feed = () => {
   return (
@@ -19,7 +19,7 @@ const Feed = () => {
       modules={[Pagination, Autoplay]}
       loop={true}
       autoplay={{
-        delay: 2500,
+        delay: 3500,
         disableOnInteraction: false,
         pauseOnMouseEnter: true,
       }}
@@ -31,7 +31,7 @@ const Feed = () => {
             <Image
               src={slide.imageLink}
               alt="Slide-image"
-              width={1400}
+              width={1300}
               height={500}
             />
           </Link>

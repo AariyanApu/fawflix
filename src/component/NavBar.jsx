@@ -3,7 +3,7 @@ import SearchBar from './SearchBar';
 
 const NavBar = () => {
   return (
-    <nav className=" flex flex-wrap justify-between ">
+    <nav className="nav">
       <Image
         src="/assets/images/fawflix-logo.png"
         alt="FawFlix Logo"

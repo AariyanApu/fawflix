@@ -8,7 +8,7 @@ export default function SearchBar() {
     setSearchText(e.target.value);
   };
   return (
-    <form className="">
+    <form className="mr-5">
       <input
         type="text"
         placeholder="Search for a movie or TV show..."
