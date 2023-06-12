@@ -3,7 +3,7 @@ import MovieList from '@/component/MovieList';
 
 const Home = () => {
   return (
-    <section className="flex  flex-col">
+    <section>
       <Feed />
       <MovieList />
     </section>

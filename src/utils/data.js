@@ -20,3 +20,40 @@ export const slideImages = [
     movieLink: '/',
   },
 ];
+
+export const movePoster = [
+  {
+    imageLink: '/assets/images/poster1.jpg',
+    movieLink: '/',
+  },
+  {
+    imageLink: '/assets/images/poster.jpg',
+    movieLink: '/',
+  },
+  {
+    imageLink: '/assets/images/poster1.jpg',
+    movieLink: '/',
+  },
+  {
+    imageLink: '/assets/images/poster.jpg',
+    movieLink: '/',
+  },
+
+  {
+    imageLink: '/assets/images/poster1.jpg',
+    movieLink: '/',
+  },
+
+  {
+    imageLink: '/assets/images/poster.jpg',
+    movieLink: '/',
+  },
+  {
+    imageLink: '/assets/images/poster1.jpg',
+    movieLink: '/',
+  },
+  {
+    imageLink: '/assets/images/poster.jpg',
+    movieLink: '/',
+  },
+];
