@@ -33,6 +33,9 @@ const Feed = () => {
               alt="Slide-image"
               width={1300}
               height={500}
+              loading="lazy"
+              placeholder="blur"
+              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP882FeLgAIcwL5T+/fugAAAABJRU5ErkJggg=="
             />
           </Link>
         </SwiperSlide>
