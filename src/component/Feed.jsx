@@ -1,6 +1,6 @@
 'use client';
 
-import { Pagination } from 'swiper';
+import { Autoplay, Pagination } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -16,12 +16,10 @@ const Feed = () => {
         dynamicBullets: true,
         clickable: true,
       }}
-      modules={[Pagination]}
+      modules={[Pagination, Autoplay]}
       loop={true}
-      grabCursor={true}
-      loopFillGroupWithBlank={true}
       autoplay={{
-        delay: 2000,
+        delay: 2500,
         disableOnInteraction: false,
         pauseOnMouseEnter: true,
       }}
