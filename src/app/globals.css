@@ -70,15 +70,13 @@
 }
 
 /* Custom Tailwind */
-.nav {
-  @apply flex justify-between items-center;
-}
+
 .app {
-  @apply relative z-10  max-w-7xl mx-auto mt-2;
+  @apply relative z-10  max-w-7xl mx-auto mt-2 flex justify-center items-center flex-col;
 }
 
 .search_input {
-  @apply w-96 h-12 mt-3 rounded-md border border-gray-200 bg-white py-2.5  pl-5 pr-12 text-sm shadow-lg font-medium focus:border-black focus:outline-none focus:ring-0;
+  @apply sm:w-96 sm:h-12 w-36 h-8 mt-3 rounded-md border border-gray-200 bg-white py-2.5  pl-5 pr-12 text-sm shadow-lg font-medium focus:border-black focus:outline-none focus:ring-0;
 }
 
 .copy_btn {
@@ -115,7 +113,7 @@
 }
 
 .movie_card {
-  @apply break-inside-avoid rounded-lg border p-2 border-gray-300 bg-white/20 bg-clip-padding  backdrop-blur-xl backdrop-filter md:w-[300px] w-full h-fit;
+  @apply break-inside-avoid rounded-lg border p-2 border-gray-300 bg-white/20 bg-clip-padding  backdrop-blur-xl backdrop-filter md:w-[300px] h-fit;
 }
 
 /* swiper css  */

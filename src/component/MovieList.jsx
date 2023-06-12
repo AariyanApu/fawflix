@@ -10,7 +10,7 @@ export default function MovieList() {
         link="http://localhost:3000"
         linkName="View More"
       />
-      <div className=" flex flex-row flex-wrap justify-between">
+      <div className=" flex flex-row flex-wrap sm:justify-between items-center justify-center ">
         {movePoster.map((movie) => (
           <MovieCard key={movie.imageLink} movie={movie} />
         ))}

@@ -3,7 +3,7 @@ import MovieList from '@/component/MovieList';
 
 const Home = () => {
   return (
-    <section>
+    <section className="sm:px-16 px-6">
       <Feed />
       <MovieList />
     </section>
