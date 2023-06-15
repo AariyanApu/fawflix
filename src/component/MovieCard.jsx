@@ -13,7 +13,7 @@ export default function MovieCard({ movie }) {
           className="h-96 w-[290px] object-cover cursor-pointer rounded-lg"
           loading="lazy"
           placeholder="blur"
-          blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP882FeLgAIcwL5T+/fugAAAABJRU5ErkJggg=="
+          blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8Vl1dAAAGuQJeC6VyHgAAAABJRU5ErkJggg=="
         />
       </Link>
     </div>
