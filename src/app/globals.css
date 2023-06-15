@@ -17,7 +17,8 @@
 }
 
 .main:before {
-  background: radial-gradient(circle, rgba(2, 0, 36, 0) 0, #fafafa 100%);
+  /* background: radial-gradient(circle, rgba(2, 0, 36, 0) 0, #242424 100%); */
+  background: #000;
   position: absolute;
   content: '';
   z-index: 2;
@@ -28,7 +29,7 @@
 
 .main:after {
   content: '';
-  background-image: url('/assets/images/grid.svg');
+  /* background-image: url('/assets/images/grid.svg'); */
   z-index: 1;
   position: absolute;
   width: 100%;
@@ -43,17 +44,7 @@
   z-index: 3;
   width: 100%;
   max-width: 640px;
-  background-image: radial-gradient(
-      at 27% 37%,
-      hsla(215, 98%, 61%, 1) 0px,
-      transparent 0%
-    ),
-    radial-gradient(at 97% 21%, hsla(125, 98%, 72%, 1) 0px, transparent 50%),
-    radial-gradient(at 52% 99%, hsla(354, 98%, 61%, 1) 0px, transparent 50%),
-    radial-gradient(at 10% 29%, hsla(256, 96%, 67%, 1) 0px, transparent 50%),
-    radial-gradient(at 97% 96%, hsla(38, 60%, 74%, 1) 0px, transparent 50%),
-    radial-gradient(at 33% 50%, hsla(222, 67%, 73%, 1) 0px, transparent 50%),
-    radial-gradient(at 79% 53%, hsla(343, 68%, 79%, 1) 0px, transparent 50%);
+
   position: absolute;
   content: '';
   width: 100%;
@@ -72,11 +63,7 @@
 /* Custom Tailwind */
 
 .app {
-  @apply relative z-10  max-w-7xl mx-auto mt-2 flex justify-center items-center flex-col;
-}
-
-.search_input {
-  @apply sm:w-96 sm:h-12 w-36 h-8 mt-3 rounded-md border border-gray-200 bg-white py-2.5  pl-5 pr-12 text-sm shadow-lg font-medium focus:border-black focus:outline-none focus:ring-0;
+  @apply relative z-10  max-w-7xl mx-auto mt-2 flex justify-center items-center flex-col overflow-x-hidden;
 }
 
 .copy_btn {
@@ -85,7 +72,7 @@
 
 /* Custom Gradient  */
 .orange_gradient {
-  @apply bg-gradient-to-r from-amber-500 via-orange-600 to-yellow-500 bg-clip-text text-transparent;
+  @apply bg-gradient-to-r from-red-600 via-pink-700 to-rose-700 bg-clip-text text-transparent;
 }
 
 .green_gradient {
@@ -113,7 +100,7 @@
 }
 
 .movie_card {
-  @apply break-inside-avoid rounded-lg border p-2 border-gray-300 bg-white/20 bg-clip-padding  backdrop-blur-xl backdrop-filter md:w-[300px] h-fit;
+  @apply break-inside-avoid rounded-lg border p-2 border-red-600 bg-gray-900/75 bg-clip-padding  backdrop-blur-xl backdrop-filter md:w-[300px] h-fit;
 }
 
 /* swiper css  */
@@ -127,12 +114,13 @@
 .swiper-slide {
   text-align: center;
   font-size: 18px;
-  background: #fff;
+  background: #000;
 
   /* Center slide text vertically */
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 8px;
 }
 
 .swiper-slide img {

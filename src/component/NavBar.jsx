@@ -9,9 +9,9 @@ const NavBar = () => {
         <Image
           src="/assets/images/fawflix-logo.png"
           alt="FawFlix Logo"
-          width={200}
-          height={30}
-          className="cursor-pointer sm:w-56 sm:h-20 w-44"
+          width={400}
+          height={100}
+          className="cursor-pointer sm:w-56 sm:h-16 w-44 my-5"
         />
       </Link>
       <SearchBar />
