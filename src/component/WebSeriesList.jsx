@@ -3,10 +3,9 @@
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/navigation';
-import 'swiper/css/pagination';
 
 import { movePoster } from '@/utils/data';
-import { FreeMode, Navigation, Pagination } from 'swiper';
+import { FreeMode, Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import MovieCard from './MovieCard';
 import Title from './Title';
@@ -26,10 +25,7 @@ export default function WebSeriesList() {
         slidesPerView={3}
         spaceBetween={30}
         freeMode={true}
-        pagination={{
-          clickable: true,
-        }}
-        modules={[FreeMode, Pagination, Navigation]}
+        modules={[FreeMode, Navigation]}
         className="mySwiper w-[1280px] h-fit  "
       >
         {movePoster.map((movie) => (
