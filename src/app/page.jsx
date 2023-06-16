@@ -1,8 +1,8 @@
-import BanglaMovieList from '@/component/BanglaMovieList';
-import EnglishMovieList from '@/component/EnglishMovieList';
-import HotList from '@/component/HotList';
-import Slide from '@/component/Slide';
-import WebSeriesList from '@/component/WebSeriesList';
+import BanglaMovieList from '@/components/BanglaMovieList';
+import EnglishMovieList from '@/components/EnglishMovieList';
+import HotList from '@/components/HotList';
+import Slide from '@/components/Slide';
+import WebSeriesList from '@/components/WebSeriesList';
 
 const Home = () => {
   return (

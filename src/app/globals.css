@@ -5,7 +5,7 @@
 /* Custom Tailwind */
 
 .app {
-  @apply relative z-10  max-w-7xl mx-auto mt-2 flex justify-center items-center flex-col overflow-x-hidden;
+  @apply max-w-7xl mx-auto mt-2 flex justify-center items-center flex-col overflow-x-hidden;
 }
 
 .copy_btn {
@@ -14,6 +14,9 @@
 
 /* Custom Gradient  */
 .orange_gradient {
+  @apply bg-gradient-to-r from-red-600 via-pink-700 to-rose-700 bg-clip-text text-transparent;
+}
+.red_gradient {
   @apply bg-gradient-to-r from-red-600 via-pink-700 to-rose-700 bg-clip-text text-transparent;
 }
 
