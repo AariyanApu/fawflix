@@ -2,7 +2,7 @@ import { movePoster } from '@/utils/data';
 import MovieCard from './MovieCard';
 import Title from './Title';
 
-export default function MovieList() {
+export default function HotList() {
   return (
     <div className="mt-16 ">
       <Title

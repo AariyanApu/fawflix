@@ -1,12 +1,12 @@
-import Feed from '@/component/Feed';
-import MovieList from '@/component/MovieList';
+import HotList from '@/component/HotList';
+import Slide from '@/component/Slide';
 import WebSeriesList from '@/component/WebSeriesList';
 
 const Home = () => {
   return (
     <section className="sm:px-16 px-6">
-      <Feed />
-      <MovieList />
+      <Slide />
+      <HotList />
       <WebSeriesList />
     </section>
   );

@@ -4,7 +4,7 @@ import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/navigation';
 
-import { movePoster } from '@/utils/data';
+import { slideImages } from '@/utils/data';
 import { FreeMode, Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import MovieCard from './MovieCard';
@@ -28,7 +28,7 @@ export default function WebSeriesList() {
         modules={[FreeMode, Navigation]}
         className="mySwiper w-[1280px] h-fit  "
       >
-        {movePoster.map((movie) => (
+        {slideImages.map((movie) => (
           <SwiperSlide
             key={movie.imageLink}
             className="text-center text-lg bg-gray-950 flex justify-center items-center rounded-lg"

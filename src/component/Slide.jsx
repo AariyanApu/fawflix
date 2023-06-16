@@ -9,7 +9,7 @@ import { slideImages } from '@/utils/data';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const Feed = () => {
+const Slide = () => {
   return (
     <div className="hidden md:block">
       <Swiper
@@ -50,4 +50,4 @@ const Feed = () => {
   );
 };
 
-export default Feed;
+export default Slide;
