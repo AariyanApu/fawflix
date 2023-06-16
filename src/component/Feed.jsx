@@ -24,12 +24,16 @@ const Feed = () => {
           disableOnInteraction: false,
           pauseOnMouseEnter: true,
         }}
-        className="mySwiper "
+        className="mySwiper w-[1280px] h-[500px] mt-2 "
       >
         {slideImages.map((slide, index) => (
-          <SwiperSlide key={index}>
+          <SwiperSlide
+            key={index}
+            className="text-center text-lg bg-gray-900 flex justify-center items-center rounded-lg"
+          >
             <Link href={slide.movieLink}>
               <Image
+                className="block w-full h-auto object-cover rounded-lg"
                 src={slide.imageLink}
                 alt="Slide-image"
                 width={1300}

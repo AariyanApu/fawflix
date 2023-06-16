@@ -100,33 +100,33 @@
 }
 
 .movie_card {
-  @apply break-inside-avoid rounded-lg border p-2 border-red-600 bg-gray-900/75 bg-clip-padding  backdrop-blur-xl backdrop-filter md:w-[300px] h-fit;
+  @apply break-inside-avoid rounded-lg border p-2 border-red-600 bg-gray-900/75 bg-clip-padding  backdrop-blur-xl backdrop-filter;
 }
 
 /* swiper css  */
 
-.swiper {
+/* .swiper {
   width: 1280px;
   height: 500px;
   margin-top: 8px;
-}
+} */
 
-.swiper-slide {
+/* .swiper-slide {
   text-align: center;
   font-size: 18px;
-  background: #000;
+  background: #000; */
 
-  /* Center slide text vertically */
-  display: flex;
+/* Center slide text vertically */
+/* display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 8px;
-}
+} */
 
-.swiper-slide img {
+/* .swiper-slide img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 8px;
-}
+} */
