@@ -1,5 +1,5 @@
 import { navigation } from '@/utils/data';
-import Link from 'next/link';
+import FooterCreditCard from './FooterCreditCard';
 
 export default function Footer() {
   return (
@@ -65,27 +65,17 @@ export default function Footer() {
           parties.
         </p>
 
-        <div>
-          <p className="text-xs leading-5 red_gradient ">
-            Link share and maintenance by{' '}
-            <Link
-              href="https://www.facebook.com/mdsohel.hayder.1"
-              className="hover-red-800 hover:underline"
-            >
-              {' '}
-              Avro Ibne-Hayder
-            </Link>
-          </p>
-          <p className="text-xs leading-5 red_gradient ">
-            &copy; Design and Developed by{' '}
-            <Link
-              href="https://www.aariyanapu.com/"
-              className="hover-red-800 hover:underline"
-            >
-              {' '}
-              Aariyan Apu.
-            </Link>
-          </p>
+        <div className="flex flex-col">
+          <FooterCreditCard
+            name="Avro Ibne-Hayder"
+            link="https://www.facebook.com/mdsohel.hayder.1"
+            desc="Link share and maintenance by "
+          />
+          <FooterCreditCard
+            name="Aariyan Apu"
+            link="https://www.aariyanapu.com/"
+            desc=" &copy; Design and Developed by "
+          />
         </div>
       </div>
     </div>
