@@ -27,7 +27,7 @@ export const movePoster = [
     movieLink: '/',
   },
   {
-    imageLink: '/assets/images/poster.jpg',
+    imageLink: '/assets/images/poster.jpeg',
     movieLink: '/',
   },
   {
@@ -35,7 +35,7 @@ export const movePoster = [
     movieLink: '/',
   },
   {
-    imageLink: '/assets/images/poster.jpg',
+    imageLink: '/assets/images/poster.jpeg',
     movieLink: '/',
   },
 
@@ -45,7 +45,7 @@ export const movePoster = [
   },
 
   {
-    imageLink: '/assets/images/poster.jpg',
+    imageLink: '/assets/images/poster.jpeg',
     movieLink: '/',
   },
   {
@@ -53,7 +53,7 @@ export const movePoster = [
     movieLink: '/',
   },
   {
-    imageLink: '/assets/images/poster.jpg',
+    imageLink: '/assets/images/poster.jpeg',
     movieLink: '/',
   },
 ];
