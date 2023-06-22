@@ -4,7 +4,7 @@ import FooterCreditCard from './FooterCreditCard';
 export default function Footer() {
   return (
     <div className=" flex w-full flex-col mb-10">
-      <div className="mt-16 border-t border-red-600/60 pt-8 sm:mt-20 lg:mt-24 lg:flex lg:items-center lg:justify-between">
+      <div className="mt-16 border-t border-red-600/60 pt-8 sm:mt-20 lg:mt-24 lg:flex lg:items-center lg:justify-between px-2">
         <div>
           <div>
             {/* Request to Upload Movie  */}
@@ -68,8 +68,8 @@ export default function Footer() {
 
       {/* Disclaimer  */}
 
-      <div className="mt-8 border-t border-red-600/60 pt-8 md:flex md:items-center md:justify-between text-center sm:text-right">
-        <p className="text-xs leading-5 red_gradient sm:w-[400px] w-80 mx-auto sm:mx-0 pb-2 sm:pb-0">
+      <div className="mt-8 border-t border-red-600/60 pt-8 md:flex md:items-center md:justify-between text-center  px-2">
+        <p className="text-xs leading-5 red_gradient sm:w-[400px] w-80 mx-auto sm:mx-0 pb-2 sm:pb-0 sm:text-left">
           This website is for educational purpose only. We do not host any files
           on our server. All contents are provided by non-affiliated third
           parties.
@@ -77,7 +77,7 @@ export default function Footer() {
 
         {/* Footer Credit */}
 
-        <div className="flex flex-col  ">
+        <div className="flex flex-col sm:text-right ">
           <FooterCreditCard
             name="Avro Ibne-Hayder"
             link="https://www.facebook.com/mdsohel.hayder.1"
