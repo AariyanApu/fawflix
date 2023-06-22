@@ -11,7 +11,7 @@ import Title from './Title';
 
 export default function EnglishMovieList() {
   return (
-    <div className="mt-16 ">
+    <div className="sm:mt-16 mt-8 ">
       <Title
         title="English Movie"
         link="http://localhost:3000"

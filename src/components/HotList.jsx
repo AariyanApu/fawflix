@@ -4,7 +4,7 @@ import Title from './Title';
 
 export default function HotList() {
   return (
-    <div className="sm:mt-16 mt-5 ">
+    <div className="sm:mt-16 mt-8 ">
       <Title
         title="Hot Cake"
         link="http://localhost:3000"

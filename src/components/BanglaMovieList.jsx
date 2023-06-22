@@ -12,7 +12,7 @@ import Title from './Title';
 
 export default function BanglaMovieList() {
   return (
-    <div className="mt-16 ">
+    <div className="sm:mt-16 mt-8">
       <Title
         title="Bangla Movie"
         link="http://localhost:3000"
