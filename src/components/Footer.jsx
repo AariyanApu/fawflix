@@ -68,8 +68,8 @@ export default function Footer() {
 
       {/* Disclaimer  */}
 
-      <div className="mt-8 border-t border-red-600/60 pt-8 md:flex md:items-center md:justify-between">
-        <p className="text-xs leading-5 red_gradient w-[400px]">
+      <div className="mt-8 border-t border-red-600/60 pt-8 md:flex md:items-center md:justify-between text-center sm:text-right">
+        <p className="text-xs leading-5 red_gradient sm:w-[400px] w-80 mx-auto sm:mx-0">
           This website is for educational purpose only. We do not host any files
           on our server. All contents are provided by non-affiliated third
           parties.
@@ -77,7 +77,7 @@ export default function Footer() {
 
         {/* Footer Credit */}
 
-        <div className="flex flex-col">
+        <div className="flex flex-col  ">
           <FooterCreditCard
             name="Avro Ibne-Hayder"
             link="https://www.facebook.com/mdsohel.hayder.1"
