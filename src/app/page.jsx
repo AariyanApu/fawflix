@@ -6,7 +6,7 @@ import WebSeriesList from '@/components/WebSeriesList';
 
 const Home = () => {
   return (
-    <section className="sm:px-16 px-6">
+    <section className="sm:px-16 px-3">
       <Slide />
       <HotList />
       <WebSeriesList />

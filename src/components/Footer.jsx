@@ -7,6 +7,8 @@ export default function Footer() {
       <div className="mt-16 border-t border-red-600/60 pt-8 sm:mt-20 lg:mt-24 lg:flex lg:items-center lg:justify-between">
         <div>
           <div>
+            {/* Request to Upload Movie  */}
+
             <h3 className="text-2xl font-semibold leading-6 red_gradient">
               {' '}
               The Movie... You wish to watch !{' '}
@@ -15,6 +17,9 @@ export default function Footer() {
               Please write the name of that movie, and we will upload that.
             </p>
           </div>
+
+          {/* Request Form  */}
+
           <form className="mt-6 flex sm:max-w-md">
             <label htmlFor="email-address" className="sr-only">
               Write the movie Name
@@ -37,7 +42,9 @@ export default function Footer() {
             </div>
           </form>
         </div>
+
         {/* Social Icon */}
+
         <div className="flex flex-col items-center text-center">
           <h2 className="text-2xl red_gradient mb-2">
             You Can Join Our Community!
@@ -49,7 +56,7 @@ export default function Footer() {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-red-600 hover:text-red-800"
+                className="text-red-600 hover:text-red-500"
               >
                 <span className="sr-only">{item.name}</span>
                 <item.icon className="h-6 w-6" aria-hidden="true" />
@@ -58,12 +65,17 @@ export default function Footer() {
           </div>
         </div>
       </div>
+
+      {/* Disclaimer  */}
+
       <div className="mt-8 border-t border-red-600/60 pt-8 md:flex md:items-center md:justify-between">
         <p className="text-xs leading-5 red_gradient w-[400px]">
           This website is for educational purpose only. We do not host any files
           on our server. All contents are provided by non-affiliated third
           parties.
         </p>
+
+        {/* Footer Credit */}
 
         <div className="flex flex-col">
           <FooterCreditCard

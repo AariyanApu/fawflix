@@ -11,7 +11,7 @@ import Link from 'next/link';
 
 const Slide = () => {
   return (
-    <div className="hidden md:block">
+    <div className="">
       <Swiper
         pagination={{
           dynamicBullets: true,
@@ -24,12 +24,12 @@ const Slide = () => {
           disableOnInteraction: false,
           pauseOnMouseEnter: true,
         }}
-        className="mySwiper w-[1280px] h-[500px] mt-2 "
+        className="mySwiper sm:w-[1280px] sm:h-[500px] w-96 h-48 sm:my-2 "
       >
         {slideImages.map((slide, index) => (
           <SwiperSlide
             key={index}
-            className="text-center text-lg bg-gray-900 flex justify-center items-center rounded-lg"
+            className="text-center text-lg bg-gray-900 flex justify-center items-center rounded-lg overflow-hidden relative z-10 shadow-l"
           >
             <Link href={slide.movieLink}>
               <Image
