@@ -35,7 +35,7 @@ export default function BanglaMovieList() {
         }}
         freeMode={true}
         modules={[FreeMode, Navigation]}
-        className="mySwiper sm:w-[1280px] w-96 h-fit mx-auto  "
+        className="mySwiper sm:w-[1280px] w-96 h-fit   "
       >
         {movePoster.map((movie) => (
           <SwiperSlide
