@@ -47,3 +47,15 @@
 .movie_card {
   @apply break-inside-avoid rounded-lg border p-2 border-red-600 bg-gray-900/75 bg-clip-padding  backdrop-blur-xl backdrop-filter;
 }
+
+/* .prevEl {
+  @apply absolute top-1/2 left-0 w-10 h-10 bg-white/20 rounded-full flex items-center justify-center cursor-pointer;
+}
+.nextEl {
+  @apply absolute top-1/2 right-0 w-10 h-10 bg-white/20 rounded-full flex items-center justify-center cursor-pointer;
+} */
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #dc2626 !important;
+}

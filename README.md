@@ -8,14 +8,15 @@ This website is build for educational purposes only. It is not for commercial us
 
 <!-- ! Todo -->
 
-- Add Hindi Movies Section
+<!-- - Add Hindi Movies Section -->
+
 - Add Tamil Movies Section
 - Add Hover Effect on MoviesCard
-- Add Typing Functionality on Footer Search
-- Make Navbar Search Text red while typing
+  <!-- - Add Typing Functionality on Footer Search -->
+  <!-- - Make Navbar Search Text red while typing -->
 - Add View More Page
 - Add Video Player Page
 - Add Movie Details section
-- Make responsive
-- flex Slider
+  <!-- - Make responsive -->
+  <!-- - flex Slider -->
 - change color of navigation bar of swiper slider

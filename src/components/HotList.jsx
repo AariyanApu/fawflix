@@ -16,7 +16,7 @@ export default function HotList() {
             key={movie.imageLink}
             movie={movie}
             customStyles="movie_card md:w-[300px] h-fit w-72 my-2"
-            imageStyles="sm:h-96 sm:w-[290px]"
+            imageStyles="h-96 w-[290px]"
           />
         ))}
       </div>
