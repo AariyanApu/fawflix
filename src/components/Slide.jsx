@@ -24,7 +24,7 @@ const Slide = () => {
           disableOnInteraction: false,
           pauseOnMouseEnter: true,
         }}
-        className="mySwiper sm:w-[1280px] sm:h-[500px] w-96 h-48 sm:my-2 "
+        className="mySwiper sm:w-[1280px] sm:h-[500px] w-[340px] h-40 sm:my-2 "
       >
         {slideImages.map((slide, index) => (
           <SwiperSlide
