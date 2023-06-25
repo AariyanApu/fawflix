@@ -15,7 +15,7 @@ export default function WebSeriesList() {
     <div className="sm:mt-16 mt-8">
       <Title
         title="Web Series"
-        link="http://localhost:3000"
+        link="http://localhost:3000/viewmore/web-series"
         linkName="View More"
       />
 

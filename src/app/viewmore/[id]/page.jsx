@@ -1,15 +1,16 @@
-import { movePoster } from '@/utils/data';
-import MovieCard from './MovieCard';
-import Title from './Title';
+'use client';
 
-export default function HotList() {
+import MovieCard from '@/components/MovieCard';
+import Title from '@/components/Title';
+import { movePoster } from '@/utils/data';
+import { useParams } from 'next/navigation';
+
+export default function ViewMore() {
+  const { id } = useParams();
+
   return (
     <div className="sm:mt-16 mt-8 ">
-      <Title
-        title="Hot Cake"
-        link="http://localhost:3000/viewmore/hotlist"
-        linkName="View More"
-      />
+      <Title title={`All ${id}`} link="http://localhost:3000" />
       <div className=" flex sm:flex-row flex-col flex-wrap sm:justify-between items-center justify-center sm:px-4 ">
         {movePoster.map((movie) => (
           <MovieCard

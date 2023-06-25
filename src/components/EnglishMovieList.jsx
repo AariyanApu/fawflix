@@ -14,7 +14,7 @@ export default function EnglishMovieList() {
     <div className="sm:mt-16 mt-8 ">
       <Title
         title="English Movie"
-        link="http://localhost:3000"
+        link="http://localhost:3000/viewmore/english-movie"
         linkName="View More"
       />
       <Swiper
