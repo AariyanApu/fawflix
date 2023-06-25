@@ -40,12 +40,12 @@ export default function HindiMovieList() {
         {movePoster.map((movie) => (
           <SwiperSlide
             key={movie.imageLink}
-            className="text-center text-lg bg-gray-950 flex justify-center items-center rounded-lg"
+            className="text-center text-lg bg-gray-950 flex justify-center items-center rounded-lg p-4 "
           >
             <MovieCard
               movie={movie}
-              customStyles="movie_card h-fit sm:w-[295px] w-72 mx-auto"
-              imageStyles="h-96 w-[290px]"
+              customStyles="movie_card h-fit sm:w-[275px] w-72 mx-auto"
+              imageStyles="h-96 w-[270px]"
             />
           </SwiperSlide>
         ))}

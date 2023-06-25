@@ -23,29 +23,26 @@ export default function WebSeriesList() {
         navigation={true}
         loop={true}
         slidesPerView={1}
-        spaceBetween={10}
         breakpoints={{
           640: {
             slidesPerView: 2,
-            spaceBetween: 20,
           },
           768: {
             slidesPerView: 3,
-            spaceBetween: 30,
           },
         }}
         freeMode={true}
         modules={[FreeMode, Navigation]}
-        className="mySwiper sm:w-[1280px] h-fit w-96 "
+        className="mySwiper sm:w-[1280px] h-fit w-96  "
       >
         {slideImages.map((movie) => (
           <SwiperSlide
             key={movie.imageLink}
-            className="text-center text-lg bg-gray-950 flex justify-center items-center rounded-lg"
+            className="text-center text-lg bg-gray-950 flex justify-center items-center rounded-lg sm:py-4 sm:pl-8"
           >
             <MovieCard
               movie={movie}
-              customStyles="movie_card h-fit sm:w-[400px] w-96 sm:mx-1"
+              customStyles="movie_card h-fit sm:w-[360px] w-96"
               imageStyles="h-[190px] w-full"
             />
           </SwiperSlide>

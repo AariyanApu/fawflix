@@ -11,7 +11,7 @@ export default function SearchBar() {
     <form className="">
       <input
         type="text"
-        placeholder="Search for a movie or TV show..."
+        placeholder="Search for a Movie or TV show..."
         value={searchText}
         onChange={handleSearchChange}
         required

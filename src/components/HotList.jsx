@@ -10,7 +10,7 @@ export default function HotList() {
         link="http://localhost:3000"
         linkName="View More"
       />
-      <div className=" flex sm:flex-row flex-col flex-wrap sm:justify-between items-center justify-center ">
+      <div className=" flex sm:flex-row flex-col flex-wrap sm:justify-between items-center justify-center sm:px-4 ">
         {movePoster.map((movie) => (
           <MovieCard
             key={movie.imageLink}
