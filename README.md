@@ -11,9 +11,9 @@ This website is build for educational purposes only. It is not for commercial us
 <!-- - Add Hindi Movies Section -->
 
 - Add Tamil Movies Section
-- Add Hover Effect on MoviesCard
-  <!-- - Add Typing Functionality on Footer Search -->
-  <!-- - Make Navbar Search Text red while typing -->
+  <!-- - Add Hover Effect on MoviesCard -->
+    <!-- - Add Typing Functionality on Footer Search -->
+    <!-- - Make Navbar Search Text red while typing -->
 - Add View More Page
 - Add Video Player Page
 - Add Movie Details section

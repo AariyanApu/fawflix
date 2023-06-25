@@ -38,14 +38,11 @@ export default function BanglaMovieList() {
         className="mySwiper sm:w-[1280px] w-96 h-fit   "
       >
         {movePoster.map((movie) => (
-          <SwiperSlide
-            key={movie.imageLink}
-            className="text-center text-lg bg-gray-950 flex justify-center items-center rounded-lg p-4"
-          >
+          <SwiperSlide key={movie.imageLink} className=" movie_card_portrait">
             <MovieCard
               movie={movie}
               customStyles="movie_card h-fit sm:w-[275px] w-72 mx-auto"
-              imageStyles="h-[370px] w-[270px]"
+              imageStyles="portrait_img "
             />
           </SwiperSlide>
         ))}
