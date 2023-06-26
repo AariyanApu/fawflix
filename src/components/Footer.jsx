@@ -9,11 +9,11 @@ export default function Footer() {
           <div>
             {/* Request to Upload Movie  */}
 
-            <h3 className="sm:text-2xl text-lx font-semibold leading-6 red_gradient text-center sm:text-left">
+            <h3 className="sm:text-2xl text-lx leading-6 red_gradient text-center sm:text-left font-semibold">
               {' '}
               The Movie... You wish to watch !{' '}
             </h3>
-            <p className="mt-2 text-xs leading-6 red_gradient">
+            <p className="mt-2 text-xs leading-6 red_gradient font-normal">
               Please write the name of that movie, and we will upload that.
             </p>
           </div>
@@ -46,11 +46,13 @@ export default function Footer() {
         {/* Social Icon */}
 
         <div className="flex flex-col items-center text-center">
-          <h2 className="text-2xl red_gradient mb-2">
+          <h2 className="text-2xl red_gradient mb-2 font-semibold">
             {' '}
             You Can Join Our Community!
             <br />
-            <span className="text-base">We will be Glad to have you.</span>
+            <span className="text-base font-normal">
+              We will be Glad to have you.
+            </span>
           </h2>
           <div className="flex space-x-6 md:order-2">
             {navigation.social.map((item) => (
