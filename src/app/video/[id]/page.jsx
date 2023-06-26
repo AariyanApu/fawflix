@@ -5,7 +5,7 @@ import Link from 'next/link';
 export default function VideoPlayer() {
   return (
     <div className="w-full">
-      <ReactPlayerCard url="https://sblona.com/e/0mqkob68163n.html" />
+      <ReactPlayerCard url="https://www.youtube.com/embed/-tJYN-eG1zk" />
       <div className="mt-10 flex  ml-1 sm:flex-row flex-col items-start justify-start sm:px-20 px-4">
         {/* Movie Card Poster */}
         <Image
