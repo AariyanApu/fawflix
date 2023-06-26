@@ -1,88 +1,64 @@
 export const slideImages = [
   {
     imageLink: '/assets/images/banner1.jpg',
-    movieLink: '/',
+    movieLink: '/video/1',
   },
   {
     imageLink: '/assets/images/banner2.jpg',
-    movieLink: '/',
+    movieLink: '/video/1 ',
   },
   {
     imageLink: '/assets/images/banner3.jpg',
-    movieLink: '/',
+    movieLink: '/video/1',
   },
   {
     imageLink: '/assets/images/banner2.jpg',
-    movieLink: '/',
+    movieLink: '/video/1',
   },
   {
     imageLink: '/assets/images/banner4.jpg',
-    movieLink: '/',
+    movieLink: '/video/1',
   },
 ];
 
 export const movePoster = [
   {
     imageLink: '/assets/images/poster1.jpg',
-    movieLink: '/',
+    movieLink: '/video/1',
   },
   {
     imageLink: '/assets/images/poster.jpeg',
-    movieLink: '/',
+    movieLink: '/video/1',
   },
   {
     imageLink: '/assets/images/poster1.jpg',
-    movieLink: '/',
+    movieLink: '/video/1',
   },
   {
     imageLink: '/assets/images/poster.jpeg',
-    movieLink: '/',
+    movieLink: '/video/1',
   },
 
   {
     imageLink: '/assets/images/poster1.jpg',
-    movieLink: '/',
+    movieLink: '/video/1',
   },
 
   {
     imageLink: '/assets/images/poster.jpeg',
-    movieLink: '/',
+    movieLink: '/video/1',
   },
   {
     imageLink: '/assets/images/poster1.jpg',
-    movieLink: '/',
+    movieLink: '/video/1',
   },
   {
     imageLink: '/assets/images/poster.jpeg',
-    movieLink: '/',
+    movieLink: '/video/1',
   },
 ];
 
 export const navigation = {
-  solutions: [
-    { name: 'Marketing', href: '#' },
-    { name: 'Analytics', href: '#' },
-    { name: 'Commerce', href: '#' },
-    { name: 'Insights', href: '#' },
-  ],
-  support: [
-    { name: 'Pricing', href: '#' },
-    { name: 'Documentation', href: '#' },
-    { name: 'Guides', href: '#' },
-    { name: 'API Status', href: '#' },
-  ],
-  company: [
-    { name: 'About', href: '#' },
-    { name: 'Blog', href: '#' },
-    { name: 'Jobs', href: '#' },
-    { name: 'Press', href: '#' },
-    { name: 'Partners', href: '#' },
-  ],
-  legal: [
-    { name: 'Claim', href: '#' },
-    { name: 'Privacy', href: '#' },
-    { name: 'Terms', href: '#' },
-  ],
   social: [
     {
       name: 'Facebook',

@@ -5,7 +5,9 @@ import Link from 'next/link';
 
 export default function MovieCard({ movie, customStyles, imageStyles }) {
   return (
-    <div className={`${customStyles} overflow-hidden`}>
+    <div
+      className={`${customStyles} overflow-hidden hover:shadow-red-700 hover:shadow-md transition-all duration-500 ease-in-out`}
+    >
       <Link href={movie.movieLink}>
         <Image
           src={movie.imageLink}

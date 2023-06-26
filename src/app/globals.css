@@ -13,11 +13,12 @@
 }
 
 /* Custom Gradient  */
-.orange_gradient {
-  @apply bg-gradient-to-r from-red-600 via-pink-700 to-rose-700 bg-clip-text text-transparent;
-}
+
 .red_gradient {
   @apply bg-gradient-to-r from-red-600 via-pink-700 to-rose-700 bg-clip-text text-transparent;
+}
+.red_gradient_border {
+  @apply bg-gradient-to-r from-red-600 via-pink-700 to-rose-700 h-[1px];
 }
 
 .green_gradient {
