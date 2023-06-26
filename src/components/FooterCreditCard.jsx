@@ -6,7 +6,7 @@ export default function FooterCreditCard({ name, link, desc }) {
       {desc}
       <Link
         href={link}
-        className="hover:text-red-600 hover:underline  font-medium"
+        className="hover:text-red-600 hover:underline  font-medium transition duration-500 ease-in-out"
       >
         {name}
       </Link>
