@@ -42,7 +42,7 @@ export default function BanglaMovieList() {
             <MovieCard
               movie={movie}
               customStyles="movie_card h-fit sm:w-[275px] w-72 mx-auto"
-              imageStyles="portrait_img "
+              imageStyles="portrait_img  "
             />
           </SwiperSlide>
         ))}

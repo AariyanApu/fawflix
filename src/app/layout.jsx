@@ -1,9 +1,7 @@
 import Footer from '@/components/Footer';
 import NavBar from '@/components/NavBar';
-// import { Lato } from 'next/font/google';
 import localFont from 'next/font/local';
 import './globals.css';
-// const primaryFont = Lato({ subsets: ['latin'], display: 'swap' });
 
 const primaryFont = localFont({ src: '../utils/roboto.ttf' });
 

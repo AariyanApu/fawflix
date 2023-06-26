@@ -35,7 +35,7 @@ export default function Footer() {
             <div className="mt-4 rounded-md sm:mt-0 sm:ml-4 sm:flex-shrink-0">
               <button
                 type="submit"
-                className="flex w-full items-center justify-center rounded-md bg-gradient-to-r from-red-600 via-pink-700 to-rose-700 py-1.5 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-red-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600 sm:text-sm sm:leading-6"
+                className="flex w-full items-center justify-center rounded-md bg-gradient-to-r from-red-600 via-pink-700 to-rose-700 py-1.5 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-red-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600 sm:text-sm sm:leading-6 transition hover:scale-105 duration-500"
               >
                 Upload It Now
               </button>
@@ -47,6 +47,7 @@ export default function Footer() {
 
         <div className="flex flex-col items-center text-center">
           <h2 className="text-2xl red_gradient mb-2">
+            {' '}
             You Can Join Our Community!
             <br />
             <span className="text-base">We will be Glad to have you.</span>

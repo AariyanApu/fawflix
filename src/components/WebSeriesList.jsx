@@ -38,12 +38,12 @@ export default function WebSeriesList() {
         {slideImages.map((movie) => (
           <SwiperSlide
             key={movie.imageLink}
-            className="text-center text-lg bg-gray-950 flex justify-center items-center rounded-lg sm:py-4 sm:pl-8"
+            className="text-center text-lg bg-gray-950 flex justify-between items-center rounded-lg sm:py-4 sm:pl-6 "
           >
             <MovieCard
               movie={movie}
-              customStyles="movie_card h-fit sm:w-[360px] w-96"
-              imageStyles="h-[190px] w-full"
+              customStyles="movie_card h-fit sm:w-[380px] w-96 overflow-hidden"
+              imageStyles="h-[190px] w-full hover:scale-95 transition duration-500 ease-in-out  rounded-xl"
             />
           </SwiperSlide>
         ))}

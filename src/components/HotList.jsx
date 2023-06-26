@@ -16,7 +16,7 @@ export default function HotList() {
             key={movie.imageLink}
             movie={movie}
             customStyles="movie_card md:w-[300px] h-fit w-72 my-2"
-            imageStyles="h-96 w-[290px]"
+            imageStyles=" h-96 w-[290px] hover:scale-105 transition duration-500 ease-in-out p-2 rounded-xl "
           />
         ))}
       </div>

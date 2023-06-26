@@ -42,7 +42,7 @@ export default function HindiMovieList() {
             <MovieCard
               movie={movie}
               customStyles="movie_card h-fit sm:w-[275px] w-72 mx-auto"
-              imageStyles="h-96 w-[270px]"
+              imageStyles=" portrait_img "
             />
           </SwiperSlide>
         ))}
