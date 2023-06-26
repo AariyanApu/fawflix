@@ -1,9 +1,11 @@
 import Footer from '@/components/Footer';
 import NavBar from '@/components/NavBar';
-import { Inter } from 'next/font/google';
+// import { Lato } from 'next/font/google';
+import localFont from 'next/font/local';
 import './globals.css';
+// const primaryFont = Lato({ subsets: ['latin'], display: 'swap' });
 
-const inter = Inter({ subsets: ['latin'] });
+const primaryFont = localFont({ src: '../utils/roboto.ttf' });
 
 export const metadata = {
   title: 'Faw Flix',
@@ -13,7 +15,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-gray-950`}>
+      <body className={`${primaryFont.className} bg-gray-950`}>
         <main className="app">
           <NavBar />
           {children}

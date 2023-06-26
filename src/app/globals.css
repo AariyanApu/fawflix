@@ -48,7 +48,7 @@
 
 /* Custom Buttons */
 
-.black_btn {
+/* .black_btn {
   @apply rounded-full border border-black bg-black py-1.5 px-5 text-white transition-all hover:bg-white hover:text-black text-center text-sm  flex items-center justify-center;
 }
 
@@ -58,4 +58,4 @@
 
 .glassmorphism {
   @apply rounded-xl border border-gray-200 bg-white/20 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur p-5;
-}
+} */
