@@ -12,7 +12,7 @@ export default function Video() {
       <div className="mt-10 flex  ml-1 sm:flex-row flex-col items-start justify-start sm:px-20 px-4">
         {/* Movie Card Poster */}
         <Image
-          src="/assets/images/poster1.jpg"
+          src="/assets/images/poster2.jpg"
           alt="poster"
           width={200}
           height={300}
