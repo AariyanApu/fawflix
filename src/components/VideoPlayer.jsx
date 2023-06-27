@@ -1,10 +1,10 @@
 'use client';
 
-export default function ReactPlayerCard({ url }) {
+export default function VideoPlayer({ url, customStyles }) {
   return (
     <iframe
       src={url}
-      className="w-full sm:h-[720px] h-80"
+      className={`${customStyles} mx-auto rounded-md`}
       allowFullScreen
       loading="lazy"
       allow=" autoplay "

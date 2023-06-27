@@ -118,3 +118,46 @@ export const navigation = {
     },
   ],
 };
+// Array for the Help Card
+
+export const helpInfo = [
+  {
+    url: 'https://play.google.com/store/apps/details?id=org.adblockplus.browser',
+    imageLink: '/assets/icons/adblockBrowser.png ',
+    altText: 'Adblock Browser',
+    linkInfo:
+      'Ads ছাড়া দেখতে চাইলে Adblock Browser, Play Store থেকে ডাউনলোড করে দেখুন',
+    customStyles: 'flex sm:hidden mt-8',
+  },
+  {
+    url: 'https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm',
+    imageLink: '/assets/icons/chrome.png',
+    altText: 'Chrome',
+    linkInfo:
+      'Ads ছাড়া দেখতে চাইলে uBlock Origin, Chrome Web Store থেকে ডাউনলোড করে দেখুন',
+    customStyles: 'hidden sm:flex',
+  },
+  {
+    url: 'https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/',
+    imageLink: '/assets/icons/firefox.png',
+    altText: 'Firefox',
+    linkInfo:
+      'Ads ছাড়া দেখতে চাইলে uBlock Origin, Firefox Add-ons থেকে ডাউনলোড করে দেখুন',
+    customStyles: 'hidden sm:flex',
+  },
+  {
+    url: 'https://microsoftedge.microsoft.com/addons/detail/ublock-origin/odfafepnkmbhccpbejgmiehpchacaeak',
+    imageLink: '/assets/icons/edge.png',
+    altText: 'Edge',
+    linkInfo:
+      'Ads ছাড়া দেখতে চাইলে uBlock Origin, Microsoft Edge Add-ons থেকে ডাউনলোড করে দেখুন',
+    customStyles: 'hidden sm:flex',
+  },
+  {
+    url: 'https://ublockorigin.com/',
+    imageLink: '/assets/icons/ublock.png',
+    altText: 'uBlock Origin',
+    linkInfo: 'uBlock Origin এর অফিসিয়াল সাইট',
+    customStyles: 'hidden sm:flex',
+  },
+];

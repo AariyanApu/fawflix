@@ -1,11 +1,14 @@
-import ReactPlayerCard from '@/components/ReactPlayerCard';
+import VideoPlayer from '@/components/VideoPlayer';
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default function VideoPlayer() {
+export default function Video() {
   return (
     <div className="w-full">
-      <ReactPlayerCard url="https://www.youtube.com/embed/-tJYN-eG1zk" />
+      <VideoPlayer
+        url="https://www.youtube.com/embed/-tJYN-eG1zk"
+        customStyles={'w-full sm:h-[720px] h-80'}
+      />
       <div className="mt-10 flex  ml-1 sm:flex-row flex-col items-start justify-start sm:px-20 px-4">
         {/* Movie Card Poster */}
         <Image
@@ -35,7 +38,7 @@ export default function VideoPlayer() {
           href="/help"
           className="text-2xl font-semibold red_gradient hover:text-red-600 hover:underline transition duration-500 ease-in-out "
         >
-          কোন রকম Ads ছাড়া নির্বিঘ্নে মুভি দেখতে এই লিংকে ক্লিক করুন।
+          বিরক্তকর Ads ছাড়া নির্বিঘ্নে মুভি দেখতে এই লিংকে ক্লিক করুন।
         </Link>
       </div>
     </div>

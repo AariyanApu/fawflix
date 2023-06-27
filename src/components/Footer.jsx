@@ -4,7 +4,7 @@ import FooterCreditCard from './FooterCreditCard';
 export default function Footer() {
   return (
     <div className=" flex w-full flex-col mb-10">
-      <div className=" red_gradient_border w-full mt-16   sm:mt-20 lg:mt-24" />
+      <div className=" red_gradient_border w-full mt-10   sm:mt-20 lg:mt-24" />
       <div className=" lg:flex lg:items-center lg:justify-between px-2 pt-8">
         <div>
           <div>
