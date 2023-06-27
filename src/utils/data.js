@@ -123,7 +123,7 @@ export const navigation = {
 export const helpInfo = [
   {
     url: 'https://play.google.com/store/apps/details?id=org.adblockplus.browser',
-    imageLink: '/assets/icons/adblockBrowser.png ',
+    imageLink: '/assets/icons/adblockBrowser.png',
     altText: 'Adblock Browser',
     linkInfo:
       'Ads ছাড়া দেখতে চাইলে Adblock Browser, Play Store থেকে ডাউনলোড করে দেখুন',
