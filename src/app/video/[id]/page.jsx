@@ -36,7 +36,7 @@ export default function Video() {
       <div className="mt-10 sm:px-20 px-4">
         <Link
           href="/help"
-          className="text-2xl font-semibold red_gradient hover:text-red-600 hover:underline transition duration-500 ease-in-out "
+          className="text-2xl font-semibold red_gradient link_style "
         >
           বিরক্তকর Ads ছাড়া নির্বিঘ্নে মুভি দেখতে এই লিংকে ক্লিক করুন।
         </Link>

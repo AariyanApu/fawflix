@@ -12,7 +12,7 @@ export default function HelpCard({
   return (
     <Link
       href={url}
-      className={`${customStyles} flex flex-row justify-start items-center sm:mb-4`}
+      className={`${customStyles} flex flex-row justify-start items-center sm:mb-4 link_style`}
     >
       <Image
         src={imageLink}
