@@ -40,7 +40,7 @@ export default function HindiMovieList() {
           <SwiperSlide key={movie.imageLink} className=" movie_card_portrait ">
             <MovieCard
               movie={movie}
-              customStyles="movie_card h-[350px] sm:w-[230px] w-72 mx-auto"
+              customStyles="movie_card h-[350px] w-[230px] mx-auto"
               imageStyles=" portrait_img "
             />
           </SwiperSlide>

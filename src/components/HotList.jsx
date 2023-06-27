@@ -13,7 +13,7 @@ export default function HotList() {
           <MovieCard
             key={movie.imageLink}
             movie={movie}
-            customStyles="movie_card sm:w-[230px] h-[350px] w-72 my-2"
+            customStyles="movie_card w-[230px] h-[350px]  my-2"
             imageStyles=" h-[330px] w-[210px] hover:scale-105 transition duration-500 ease-in-out p-1 rounded-xl "
           />
         ))}
