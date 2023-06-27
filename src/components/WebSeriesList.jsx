@@ -11,6 +11,8 @@ import MovieCard from './MovieCard';
 import Title from './Title';
 
 export default function WebSeriesList() {
+  const lastTenMovies = slideImages.slice(-10);
+
   return (
     <div className="sm:mt-16 mt-8">
       <Title
@@ -35,7 +37,7 @@ export default function WebSeriesList() {
         modules={[FreeMode, Navigation]}
         className="mySwiper sm:w-[1280px] h-fit w-96  "
       >
-        {slideImages.map((movie) => (
+        {lastTenMovies?.map((movie) => (
           <SwiperSlide
             key={movie.imageLink}
             className="text-center text-lg bg-gray-950 flex justify-between items-center rounded-lg sm:py-4 sm:pl-6 "

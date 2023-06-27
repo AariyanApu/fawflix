@@ -23,37 +23,54 @@ export const slideImages = [
 
 export const movePoster = [
   {
-    imageLink: '/assets/images/poster1.jpg',
+    imageLink: '/assets/images/poster1.jpeg',
     movieLink: '/video/1',
   },
   {
-    imageLink: '/assets/images/poster.jpeg',
+    imageLink: '/assets/images/poster1.jpeg',
     movieLink: '/video/1',
   },
   {
-    imageLink: '/assets/images/poster1.jpg',
+    imageLink: '/assets/images/poster2.jpg',
     movieLink: '/video/1',
   },
   {
-    imageLink: '/assets/images/poster.jpeg',
-    movieLink: '/video/1',
-  },
-
-  {
-    imageLink: '/assets/images/poster1.jpg',
+    imageLink: '/assets/images/poster3.jpg',
     movieLink: '/video/1',
   },
 
   {
-    imageLink: '/assets/images/poster.jpeg',
+    imageLink: '/assets/images/poster4.jpg',
+    movieLink: '/video/1',
+  },
+
+  {
+    imageLink: '/assets/images/poster5.jpg',
     movieLink: '/video/1',
   },
   {
-    imageLink: '/assets/images/poster1.jpg',
+    imageLink: '/assets/images/poster6.jpg',
     movieLink: '/video/1',
   },
   {
-    imageLink: '/assets/images/poster.jpeg',
+    imageLink: '/assets/images/poster7.jpg',
+    movieLink: '/video/1',
+  },
+  {
+    imageLink: '/assets/images/poster8.jpg',
+    movieLink: '/video/1',
+  },
+
+  {
+    imageLink: '/assets/images/poster9.jpg',
+    movieLink: '/video/1',
+  },
+  {
+    imageLink: '/assets/images/poster10.jpg',
+    movieLink: '/video/1',
+  },
+  {
+    imageLink: '/assets/images/poster1.jpeg',
     movieLink: '/video/1',
   },
 ];

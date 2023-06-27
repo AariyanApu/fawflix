@@ -11,6 +11,8 @@ import MovieCard from './MovieCard';
 import Title from './Title';
 
 export default function HindiMovieList() {
+  const lastTenMovies = movePoster.slice(-10);
+
   return (
     <div className="sm:mt-16 mt-8">
       <Title
@@ -22,26 +24,23 @@ export default function HindiMovieList() {
         navigation={true}
         loop={true}
         slidesPerView={1}
-        spaceBetween={10}
         breakpoints={{
           640: {
-            slidesPerView: 2,
-            spaceBetween: 20,
+            slidesPerView: 3,
           },
           768: {
-            slidesPerView: 4,
-            spaceBetween: 30,
+            slidesPerView: 5,
           },
         }}
         freeMode={true}
         modules={[FreeMode, Navigation]}
         className="mySwiper sm:w-[1280px] w-96 h-fit   "
       >
-        {movePoster.map((movie) => (
+        {lastTenMovies?.map((movie) => (
           <SwiperSlide key={movie.imageLink} className=" movie_card_portrait ">
             <MovieCard
               movie={movie}
-              customStyles="movie_card h-fit sm:w-[275px] w-72 mx-auto"
+              customStyles="movie_card h-[350px] sm:w-[230px] w-72 mx-auto"
               imageStyles=" portrait_img "
             />
           </SwiperSlide>
