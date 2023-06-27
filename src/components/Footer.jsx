@@ -54,12 +54,12 @@ export default function Footer() {
               We will be Glad to have you.
             </span>
           </h2>
-          <div className="flex space-x-6 md:order-2">
+          <div className="flex space-x-6 md:order-2 ">
             {navigation.social.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                className="text-red-600 hover:text-red-500"
+                className="text-red-600 hover:text-rose-700  transition duration-500 ease-in-out "
               >
                 <span className="sr-only">{item.name}</span>
                 <item.icon className="h-6 w-6" aria-hidden="true" />
