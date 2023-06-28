@@ -31,33 +31,39 @@ export const movePoster = [
     movieLink: '/video/1',
   },
   {
-    imageLink: '/assets/images/poster2.jpg',
+    imageLink:
+      'https://i.ibb.co/TwxzNPn/Mission-Huntdown-2023-S01-Bengali-Hoichoi-WEB-DL-H264-AAC-1080p-720p-480p-Download.jpg',
     movieLink: '/video/1',
   },
   {
-    imageLink: '/assets/images/poster3.jpg',
-    movieLink: '/video/1',
-  },
-
-  {
-    imageLink: '/assets/images/poster4.jpg',
+    imageLink:
+      'https://i.ibb.co/0FLrs19/Roktojoba-2023-Bengali-WEB-DL-H264-AAC-1080p-720p-480p-Downloa.jpg',
     movieLink: '/video/1',
   },
 
   {
-    imageLink: '/assets/images/poster5.jpg',
+    imageLink:
+      'https://i.ibb.co/qgWVTHw/Nikosh-2023-Bengali-DP-WEB-DL-H264-AAC-1080p-720p-480p-Downloa.webp',
+    movieLink: '/video/1',
+  },
+
+  {
+    imageLink:
+      'https://m.media-amazon.com/images/M/MV5BZDA1MWQ0ZDAtY2ZhMC00NDY4LTkzNTQtZjcwNWZhYTU5N2ZhXkEyXkFqcGdeQXVyNTk4NzEzNjQ@._V1_SX300.jpg',
     movieLink: '/video/1',
   },
   {
-    imageLink: '/assets/images/poster6.jpg',
+    imageLink: 'https://i.ibb.co/Fw9ndz6/challenge-145095285973.jpg',
     movieLink: '/video/1',
   },
   {
-    imageLink: '/assets/images/poster7.jpg',
+    imageLink:
+      'https://i.ibb.co/TBNZq4c/Kisi-Ka-Bhai-Kisi-Ki-Jaan-2023-Hindi-Zee5-WEB-DL-H264-AAC-1080p-720p-480p-Download.webp',
     movieLink: '/video/1',
   },
   {
-    imageLink: '/assets/images/poster8.jpg',
+    imageLink:
+      'https://m.media-amazon.com/images/M/MV5BMmIyOGE5ZmMtYzhjYi00NDM2LTkwZWItZTAzNjVmYTZmNDhlXkEyXkFqcGdeQXVyNjk3MjI4NDg@._V1_SX300.jpg',
     movieLink: '/video/1',
   },
 

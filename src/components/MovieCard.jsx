@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
 
 export default function MovieCard({ movie, customStyles, imageStyles }) {
@@ -9,7 +8,7 @@ export default function MovieCard({ movie, customStyles, imageStyles }) {
       className={`${customStyles} overflow-hidden hover:shadow-red-700 hover:shadow-md transition-all duration-500 ease-in-out`}
     >
       <Link href={movie.movieLink}>
-        <Image
+        <img
           src={movie.imageLink}
           alt="poster"
           width={400}
