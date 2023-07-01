@@ -1,18 +1,42 @@
+/* eslint-disable @next/next/no-img-element */
+// 'use client';
 import VideoPlayer from '@/components/VideoPlayer';
-import Image from 'next/image';
 import Link from 'next/link';
+import { notFound } from 'next/navigation';
 
-export default function Video() {
+async function getData(id) {
+  const res = await fetch(`http://localhost:3000/api/posts/${id}`, {
+    cache: 'no-store',
+  });
+
+  if (!res.ok) {
+    return notFound();
+  }
+
+  return res.json();
+}
+
+// Dynamic route metadata
+export async function generateMetadata({ params }) {
+  const data = await getData(params.id);
+  return {
+    title: data.title,
+    description: data.description,
+  };
+}
+export default async function Video({ params }) {
+  const data = await getData(params.id);
+
   return (
     <div className="w-full">
       <VideoPlayer
-        url="https://www.youtube.com/embed/-tJYN-eG1zk"
+        url={data.movieLink}
         customStyles={'w-full sm:h-[720px] h-80'}
       />
       <div className="mt-10 flex  ml-1 sm:flex-row flex-col items-start justify-start sm:px-20 px-4">
         {/* Movie Card Poster */}
-        <Image
-          src="/assets/images/poster2.jpg"
+        <img
+          src={data.imageLink}
           alt="poster"
           width={200}
           height={300}
@@ -20,8 +44,8 @@ export default function Video() {
         />
         <div className="red_gradient sm:ml-10 mt-4 sm:mt-0">
           {/* movie card descriptions */}
-          <h1 className="text-2xl font-bold">Title:</h1>
-          <p className="text-sm">Description:</p>
+          <h1 className="text-2xl font-bold">Title:{data.title}</h1>
+          <p className="text-sm">Description:{data.description}</p>
           <p className="text-sm">Genre:</p>
           <p className="text-sm">Duration:</p>
           <p className="text-sm">Release Date:</p>

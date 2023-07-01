@@ -2,7 +2,7 @@
 
 import MovieCard from '@/components/MovieCard';
 import Title from '@/components/Title';
-import { useParams } from 'next/navigation';
+import { notFound, useParams } from 'next/navigation';
 
 async function getData() {
   const res = await fetch('http://localhost:3000/api/posts', {
@@ -10,7 +10,7 @@ async function getData() {
   });
 
   if (!res.ok) {
-    throw new Error('Failed to fetch data');
+    return notFound();
   }
 
   return res.json();
