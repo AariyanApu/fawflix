@@ -2,11 +2,11 @@
 
 import MovieCard from '@/components/MovieCard';
 import Title from '@/components/Title';
-import { notFound, useParams } from 'next/navigation';
+import { notFound } from 'next/navigation';
 
 async function getData() {
-  const res = await fetch('/api/posts', {
-    next: { revalidate: 10 },
+  const res = await fetch('https://fawflix.vercel.app/api/posts', {
+    cache: 'no-store',
   });
 
   if (!res.ok) {
@@ -16,9 +16,9 @@ async function getData() {
   return res.json();
 }
 
-export default async function ViewMore() {
-  const { id } = useParams();
+export default async function ViewMore({ params }) {
   const data = await getData();
+  const { id } = params;
 
   return (
     <div className="sm:mt-16 mt-8 ">
