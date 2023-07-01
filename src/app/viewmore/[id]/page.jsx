@@ -1,5 +1,3 @@
-'use client';
-
 import MovieCard from '@/components/MovieCard';
 import Title from '@/components/Title';
 import { notFound } from 'next/navigation';
