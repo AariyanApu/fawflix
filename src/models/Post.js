@@ -1,5 +1,4 @@
 import mongoose from 'mongoose';
-// Schema for users
 
 const { Schema } = mongoose;
 
@@ -13,6 +12,28 @@ const postSchema = new Schema(
       type: String,
       required: true,
     },
+
+    genre: {
+      type: String,
+      required: true,
+    },
+    releaseDate: {
+      type: String,
+      required: true,
+    },
+    director: {
+      type: String,
+      required: true,
+    },
+    cast: {
+      type: String,
+      required: true,
+    },
+    language: {
+      type: String,
+      required: true,
+    },
+
     imageLink: {
       type: String,
       required: true,
@@ -25,6 +46,6 @@ const postSchema = new Schema(
   { timestamps: true },
 );
 
-// export default mongoose.model('Post', postSchema);
-
 export default mongoose.models.Post || mongoose.model('Post', postSchema);
+
+// export default mongoose.model('Post', postSchema);

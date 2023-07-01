@@ -29,14 +29,11 @@ export default function Footer() {
               name="email-address"
               id="email-address"
               required
-              className="w-full min-w-0 appearance-none rounded-md border-red-600 bg-gray-900 px-[calc(theme(spacing.3)-1px)] py-[calc(theme(spacing[1.5])-1px)] text-base leading-7 text-red-600 placeholder-red-600 shadow-sm focus:border-red-600 focus:ring-red-600 sm:w-56 sm:text-sm sm:leading-6"
+              className="input_field sm:w-56"
               placeholder=" Write The Movie Name"
             />
             <div className="mt-4 rounded-md sm:mt-0 sm:ml-4 sm:flex-shrink-0">
-              <button
-                type="submit"
-                className="flex w-full items-center justify-center rounded-md bg-gradient-to-r from-red-600 via-pink-700 to-rose-700 py-1.5 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-red-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600 sm:text-sm sm:leading-6 transition hover:scale-105 duration-500"
-              >
+              <button type="submit" className="button_style">
                 Upload It Now
               </button>
             </div>

@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
 async function getData(id) {
-  const res = await fetch(`https://fawflix.vercel.app/api/posts/${id}`, {
+  const res = await fetch(`http://localhost:3000/api/posts/${id}`, {
     cache: 'no-store',
   });
 
@@ -27,6 +27,8 @@ export async function generateMetadata({ params }) {
 export default async function Video({ params }) {
   const data = await getData(params.id);
 
+  console.log(data);
+
   return (
     <div className="w-full">
       <VideoPlayer
@@ -44,16 +46,16 @@ export default async function Video({ params }) {
         />
         <div className="red_gradient sm:ml-10 mt-4 sm:mt-0">
           {/* movie card descriptions */}
-          <h1 className="text-2xl font-bold">Title:{data.title}</h1>
-          <p className="text-sm">Description:{data.description}</p>
-          <p className="text-sm">Genre:</p>
-          <p className="text-sm">Duration:</p>
-          <p className="text-sm">Release Date:</p>
-          <p className="text-sm">Rating:</p>
-          <p className="text-sm">Director:</p>
-          <p className="text-sm">Cast:</p>
-          <p className="text-sm">Country:</p>
-          <p className="text-sm">Language:</p>
+          <h1 className="text-2xl font-bold">Title: {data.title}</h1>
+          <p className="text-sm">Description: {data.desc}</p>
+          <p className="text-sm">Genre: {data.genre}</p>
+
+          <p className="text-sm">Release Date: {data.releaseDate} </p>
+
+          <p className="text-sm">Director: {data.director}</p>
+          <p className="text-sm">Cast: {data.cast}</p>
+
+          <p className="text-sm">Language: {data.language}</p>
         </div>
       </div>
       {/* disclaimer */}
