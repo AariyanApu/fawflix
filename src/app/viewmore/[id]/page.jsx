@@ -5,7 +5,7 @@ import Title from '@/components/Title';
 import { notFound, useParams } from 'next/navigation';
 
 async function getData() {
-  const res = await fetch('http://localhost:3000/api/posts', {
+  const res = await fetch('/api/posts', {
     next: { revalidate: 10 },
   });
 
