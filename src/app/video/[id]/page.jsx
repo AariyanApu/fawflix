@@ -48,7 +48,9 @@ export default async function Video({ params }) {
           {/* movie card descriptions */}
           <h1 className="text-2xl font-bold">Title: {data.title}</h1>
           <p className="text-sm">Description: {data.desc}</p>
-          <p className="text-sm">Genre: {data.genre}</p>
+          <p className="text-sm">
+            Genre: {data.genre.map((tag) => `#${tag} `)}
+          </p>
 
           <p className="text-sm">Release Date: {data.releaseDate} </p>
 

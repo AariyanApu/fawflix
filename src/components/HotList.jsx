@@ -1,15 +1,15 @@
-import { movePoster } from '@/utils/data';
+import { notFound } from 'next/navigation';
 import MovieCard from './MovieCard';
 import Title from './Title';
 
-export default function HotList() {
-  const lastTenMovies = movePoster.slice(-10);
+export default async function HotList() {
+  const data = await getData();
 
   return (
     <div className="sm:mt-16 mt-8 ">
       <Title title="Hot Cake" link="/viewmore/hotlist" linkName="View More" />
       <div className=" flex sm:flex-row flex-col flex-wrap sm:justify-between items-center justify-center sm:px-4 ">
-        {lastTenMovies?.map((movie) => (
+        {data.slice(-10).map((movie) => (
           <MovieCard
             key={movie.imageLink}
             movie={movie}
@@ -20,4 +20,17 @@ export default function HotList() {
       </div>
     </div>
   );
+}
+
+async function getData() {
+  const res = await fetch('https://fawflix.vercel.app/api/posts', {
+    cache: 'no-store',
+  });
+
+  if (!res.ok) {
+    return notFound();
+  }
+
+  const data = await res.json();
+  return data.slice(-10);
 }

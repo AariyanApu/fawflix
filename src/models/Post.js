@@ -10,28 +10,23 @@ const postSchema = new Schema(
     },
     desc: {
       type: String,
-      required: true,
     },
 
     genre: {
-      type: String,
+      type: [String],
       required: true,
     },
     releaseDate: {
       type: String,
-      required: true,
     },
     director: {
       type: String,
-      required: true,
     },
     cast: {
       type: String,
-      required: true,
     },
     language: {
       type: String,
-      required: true,
     },
 
     imageLink: {
@@ -41,6 +36,10 @@ const postSchema = new Schema(
     movieLink: {
       type: String,
       required: true,
+    },
+    clickCount: {
+      type: Number,
+      default: 0,
     },
   },
   { timestamps: true },

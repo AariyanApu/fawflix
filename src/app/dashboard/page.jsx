@@ -17,12 +17,13 @@ export default function Dashboard() {
 
   const [loading, setLoading] = useState(false);
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+  console.log(post);
 
   const handleSubmit = async (e) => {
     setLoading(true);
     e.preventDefault();
     try {
-      await fetch('http://localhost:3000/api/posts', {
+      await fetch('https://fawflix.vercel.app/api/posts', {
         method: 'POST',
         body: JSON.stringify(post),
       });
@@ -48,7 +49,6 @@ export default function Dashboard() {
     <div>
       <div className="flex flex-col ">
         <h1 className="red_gradient">Add Movies </h1>
-
         <form onSubmit={handleSubmit} className="flex flex-col gap-4 w-96">
           <Input
             placeholder="Title"
@@ -65,7 +65,9 @@ export default function Dashboard() {
           <Input
             placeholder="Genre"
             value={post.genre}
-            onChange={(e) => setPost({ ...post, genre: e.target.value })}
+            onChange={(e) =>
+              setPost({ ...post, genre: e.target.value.split(',') })
+            }
           />
           <Input
             placeholder="Release Date"
