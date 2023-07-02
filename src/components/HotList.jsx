@@ -17,7 +17,7 @@ export default async function HotList() {
               key={movie.imageLink}
               movie={movie}
               customStyles="movie_card w-[230px] h-[350px]  my-2"
-              imageStyles=" h-[330px] w-[210px] hover:scale-105 transition duration-500 ease-in-out p-1 rounded-xl "
+              imageStyles=" h-[330px] w-[210px] "
             />
           ))}
       </div>
