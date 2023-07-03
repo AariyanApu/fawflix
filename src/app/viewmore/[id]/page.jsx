@@ -4,7 +4,7 @@ import Title from '@/components/Title';
 import { useUser } from '@/utils/GetDataApi';
 
 export default async function ViewMore({ params }) {
-  const { id } = params;
+  const id = params.id;
   const { data, isLoading, isError } = useUser();
   return (
     <div className="sm:mt-16 mt-8 ">
