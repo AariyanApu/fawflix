@@ -29,5 +29,8 @@ Add Search Functionality
 Add Pagination
 Add Separate Models for banner
 Add database to full homepage
-Add database to Movie Request
+
+<!-- Add database to Movie Request -->
+
 Redesign the Movie Details
+add loading animation

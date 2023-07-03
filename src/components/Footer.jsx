@@ -1,7 +1,29 @@
+'use client';
+
 import { navigation } from '@/utils/data';
+import { useState } from 'react';
 import FooterCreditCard from './FooterCreditCard';
 
 export default function Footer() {
+  const [movieRequest, setMovieRequest] = useState({ title: '' });
+  const [loading, setLoading] = useState(false);
+  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await fetch('/api/help', {
+        method: 'POST',
+        body: JSON.stringify(movieRequest),
+      });
+      setLoading(false);
+      setIsFormSubmitted(true);
+
+      setMovieRequest({ title: '' });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div className=" flex w-full flex-col mb-10">
       <div className=" red_gradient_border w-full mt-10   sm:mt-20 lg:mt-24" />
@@ -19,25 +41,37 @@ export default function Footer() {
           </div>
 
           {/* Request Form  */}
-
-          <form className="mt-6 mb-5 sm:mb-0 flex sm:max-w-md flex-col sm:flex-row">
-            <label htmlFor="email-address" className="sr-only">
-              Write the movie Name
-            </label>
-            <input
-              type="text"
-              name="email-address"
-              id="email-address"
-              required
-              className="input_field sm:w-56"
-              placeholder=" Write The Movie Name"
-            />
-            <div className="mt-4 rounded-md sm:mt-0 sm:ml-4 sm:flex-shrink-0">
-              <button type="submit" className="button_style">
-                Upload It Now
-              </button>
-            </div>
-          </form>
+          {!isFormSubmitted ? (
+            <form
+              className="mt-6 mb-5 sm:mb-0 flex sm:max-w-md flex-col sm:flex-row"
+              onSubmit={handleSubmit}
+            >
+              <input
+                type="text"
+                required
+                className="input_field sm:w-56"
+                placeholder=" Write The Movie Name"
+                value={movieRequest.title}
+                onChange={(e) =>
+                  setMovieRequest({ ...movieRequest, title: e.target.value })
+                }
+              />
+              <div className="mt-4 rounded-md sm:mt-0 sm:ml-4 sm:flex-shrink-0">
+                <button
+                  type="submit"
+                  className="button_style"
+                  onClick={handleSubmit}
+                >
+                  {!loading ? 'Upload It Now' : 'Requesting...'}
+                </button>
+              </div>
+            </form>
+          ) : (
+            <p className="mt-2 text-xs leading-6 red_gradient font-normal">
+              {' '}
+              Your movie request Submitted Successfully{' '}
+            </p>
+          )}
         </div>
 
         {/* Social Icon */}

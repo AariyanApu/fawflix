@@ -14,7 +14,7 @@ export default function MovieCard({ movie, customStyles, imageStyles }) {
           alt="poster"
           width={400}
           height={400}
-          className={` object-cover cursor-pointer  image_hover ${imageStyles}}`}
+          className={` object-cover cursor-pointer  image_hover ${imageStyles}} `}
         />
       </Link>
     </div>

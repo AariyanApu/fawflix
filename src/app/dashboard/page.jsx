@@ -1,5 +1,7 @@
 'use client';
 import Input from '@/components/Input';
+import MovieCard from '@/components/MovieCard';
+import { useUser } from '@/utils/GetDataApi';
 import { useState } from 'react';
 
 export default function Dashboard() {
@@ -44,77 +46,95 @@ export default function Dashboard() {
     }
   };
 
-  // const { user, isLoading, isError } = useUser();
+  const { data, isLoading, isError } = useUser();
 
-  // console.log(user + 'from swr');
   return (
     <div>
-      <div className="flex flex-col ">
-        <h1 className="red_gradient">Add Movies </h1>
-        <form onSubmit={handleSubmit} className="flex flex-col gap-4 w-96">
-          <Input
-            placeholder="Title"
-            value={post.title}
-            onChange={(e) => setPost({ ...post, title: e.target.value })}
-          />
+      <div className="flex flex-row w-full">
+        <div>
+          {data?.reverse().map((movie) => (
+            <MovieCard
+              key={movie._id}
+              movie={movie}
+              customStyles=" movie_card w-[130px] h-[200px]  my-2"
+              imageStyles=" h-[180px] w-[110px] image_hover "
+            />
+          ))}
+        </div>
 
-          <Input
-            placeholder="Description"
-            value={post.desc}
-            onChange={(e) => setPost({ ...post, desc: e.target.value })}
-          />
+        <div className="ml-36">
+          <h1 className="red_gradient">Add Movies </h1>
+          <form onSubmit={handleSubmit} className="flex flex-col gap-4 w-96">
+            <Input
+              placeholder="Title"
+              value={post.title}
+              onChange={(e) => setPost({ ...post, title: e.target.value })}
+            />
 
-          <Input
-            placeholder="Genre"
-            value={post.genre}
-            onChange={(e) =>
-              setPost({ ...post, genre: e.target.value.split(',') })
-            }
-          />
-          <Input
-            placeholder="Release Date"
-            value={post.releaseDate}
-            onChange={(e) => setPost({ ...post, releaseDate: e.target.value })}
-          />
+            <Input
+              placeholder="Description"
+              value={post.desc}
+              onChange={(e) => setPost({ ...post, desc: e.target.value })}
+            />
 
-          <Input
-            placeholder="Director"
-            value={post.director}
-            onChange={(e) => setPost({ ...post, director: e.target.value })}
-          />
-          <Input
-            placeholder="Cast"
-            value={post.cast}
-            onChange={(e) => setPost({ ...post, cast: e.target.value })}
-          />
+            <Input
+              placeholder="Genre"
+              value={post.genre}
+              onChange={(e) =>
+                setPost({ ...post, genre: e.target.value.split(',') })
+              }
+            />
+            <Input
+              placeholder="Release Date"
+              value={post.releaseDate}
+              onChange={(e) =>
+                setPost({ ...post, releaseDate: e.target.value })
+              }
+            />
 
-          <Input
-            placeholder="Language"
-            value={post.language}
-            onChange={(e) => setPost({ ...post, language: e.target.value })}
-          />
+            <Input
+              placeholder="Director"
+              value={post.director}
+              onChange={(e) => setPost({ ...post, director: e.target.value })}
+            />
+            <Input
+              placeholder="Cast"
+              value={post.cast}
+              onChange={(e) => setPost({ ...post, cast: e.target.value })}
+            />
 
-          <Input
-            placeholder="Image Link"
-            value={post.imageLink}
-            onChange={(e) => setPost({ ...post, imageLink: e.target.value })}
-          />
+            <Input
+              placeholder="Language"
+              value={post.language}
+              onChange={(e) => setPost({ ...post, language: e.target.value })}
+            />
 
-          <Input
-            placeholder="Movie Link"
-            value={post.movieLink}
-            onChange={(e) => setPost({ ...post, movieLink: e.target.value })}
-          />
-          <button type="submit" onClick={handleSubmit} className="button_style">
-            {' '}
-            {!loading ? 'Submit Movie ' : 'Movie Submitting...'}
-          </button>
-        </form>
-        {isFormSubmitted && (
-          <div className="flex flex-col gap-4 w-96">
-            <h1 className="red_gradient">Movie Submitted successfully </h1>
-          </div>
-        )}
+            <Input
+              placeholder="Image Link"
+              value={post.imageLink}
+              onChange={(e) => setPost({ ...post, imageLink: e.target.value })}
+            />
+
+            <Input
+              placeholder="Movie Link"
+              value={post.movieLink}
+              onChange={(e) => setPost({ ...post, movieLink: e.target.value })}
+            />
+            <button
+              type="submit"
+              onClick={handleSubmit}
+              className="button_style"
+            >
+              {' '}
+              {!loading ? 'Submit Movie ' : 'Movie Submitting...'}
+            </button>
+          </form>
+          {isFormSubmitted && (
+            <div className="flex flex-col gap-4 w-96">
+              <h1 className="red_gradient">Movie Submitted successfully </h1>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );
