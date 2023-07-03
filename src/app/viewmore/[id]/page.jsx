@@ -1,23 +1,11 @@
+'use client';
 import MovieCard from '@/components/MovieCard';
 import Title from '@/components/Title';
-import { notFound } from 'next/navigation';
-
-async function getData() {
-  const res = await fetch('https://fawflix.vercel.app/api/posts', {
-    cache: 'no-store',
-  });
-
-  if (!res.ok) {
-    return notFound();
-  }
-
-  return res.json();
-}
+import { useUser } from '@/utils/GetDataApi';
 
 export default async function ViewMore({ params }) {
-  const data = await getData();
   const { id } = params;
-
+  const { data, isLoading, isError } = useUser();
   return (
     <div className="sm:mt-16 mt-8 ">
       <Title title={`All ${id}`} link="http://localhost:3000" />

@@ -17,13 +17,12 @@ export default function Dashboard() {
 
   const [loading, setLoading] = useState(false);
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
-  console.log(post);
 
   const handleSubmit = async (e) => {
     setLoading(true);
     e.preventDefault();
     try {
-      await fetch('https://fawflix.vercel.app/api/posts', {
+      await fetch('/api/posts', {
         method: 'POST',
         body: JSON.stringify(post),
       });
@@ -45,6 +44,9 @@ export default function Dashboard() {
     }
   };
 
+  // const { user, isLoading, isError } = useUser();
+
+  // console.log(user + 'from swr');
   return (
     <div>
       <div className="flex flex-col ">

@@ -1,16 +1,17 @@
-import { notFound } from 'next/navigation';
+'use client';
+import { useUser } from '@/utils/GetDataApi';
 import MovieCard from './MovieCard';
 import Title from './Title';
 
-export default async function HotList() {
-  const data = await getData();
+export default function HotList() {
+  const { data, isLoading, isError } = useUser();
 
   return (
     <div className="sm:mt-16 mt-8 ">
       <Title title="Hot Cake" link="/viewmore/hotlist" linkName="View More" />
       <div className=" flex sm:flex-row flex-col flex-wrap sm:justify-between items-center justify-center sm:px-4 ">
         {data
-          .slice(-10)
+          ?.slice(-10)
           .reverse()
           .map((movie) => (
             <MovieCard
@@ -23,17 +24,4 @@ export default async function HotList() {
       </div>
     </div>
   );
-}
-
-async function getData() {
-  const res = await fetch('https://fawflix.vercel.app/api/posts', {
-    cache: 'no-store',
-  });
-
-  if (!res.ok) {
-    return notFound();
-  }
-
-  const data = await res.json();
-  return data.slice(-10);
 }

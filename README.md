@@ -21,7 +21,8 @@ This website is build for educational purposes only. It is not for commercial us
   <!-- - flex Slider -->
   <!-- - change color of navigation bar of swiper slider -->
 
-Add genre array and display them
+<!-- Add genre array and display them -->
+
 Add delete POST
 Add Edit POST
 Add Search Functionality
