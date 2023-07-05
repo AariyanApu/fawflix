@@ -1,10 +1,13 @@
 'use client';
 import { useUser } from '@/utils/GetDataApi';
 import MovieCard from './MovieCard';
+import MovieCardLoading from './MovieCardLoading';
 import Title from './Title';
 
 export default function HotList() {
   const { data, isLoading, isError } = useUser();
+
+  if (!data) return <MovieCardLoading />;
 
   return (
     <div className="sm:mt-16 mt-8 ">

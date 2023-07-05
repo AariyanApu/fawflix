@@ -1,11 +1,13 @@
 'use client';
 import MovieCard from '@/components/MovieCard';
+import MovieCardLoading from '@/components/MovieCardLoading';
 import Title from '@/components/Title';
 import { useUser } from '@/utils/GetDataApi';
 
 export default async function ViewMore({ params }) {
   const id = params.id;
   const { data, isLoading, isError } = useUser();
+  if (!data) return <MovieCardLoading />;
   return (
     <div className="sm:mt-16 mt-8 ">
       <Title title={`All ${id}`} link="http://localhost:3000" />

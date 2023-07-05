@@ -10,12 +10,12 @@ export default function Footer() {
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
     try {
       await fetch('/api/help', {
         method: 'POST',
         body: JSON.stringify(movieRequest),
       });
-      setLoading(false);
       setIsFormSubmitted(true);
 
       setMovieRequest({ title: '' });
