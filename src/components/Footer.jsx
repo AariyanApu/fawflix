@@ -2,16 +2,22 @@
 
 import { navigation } from '@/utils/data';
 import { useState } from 'react';
+import * as Yup from 'yup';
 import FooterCreditCard from './FooterCreditCard';
 
 export default function Footer() {
   const [movieRequest, setMovieRequest] = useState({ title: '' });
   const [loading, setLoading] = useState(false);
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+  const validationSchema = Yup.object().shape({
+    title: Yup.string().required('Title is required'),
+  });
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     try {
+      await validationSchema.validate(movieRequest);
+
       await fetch('/api/help', {
         method: 'POST',
         body: JSON.stringify(movieRequest),
@@ -21,6 +27,8 @@ export default function Footer() {
       setMovieRequest({ title: '' });
     } catch (error) {
       console.log(error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -48,7 +56,6 @@ export default function Footer() {
             >
               <input
                 type="text"
-                required
                 className="input_field sm:w-56"
                 placeholder=" Write The Movie Name"
                 value={movieRequest.title}

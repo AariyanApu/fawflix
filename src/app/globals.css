@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 /* Custom Tailwind */
+body {
+  @apply bg-gray-950 text-red-600;
+}
 
 .app {
   @apply max-w-7xl mx-auto mt-2 flex justify-center items-center flex-col overflow-x-hidden px-3 sm:px-0;

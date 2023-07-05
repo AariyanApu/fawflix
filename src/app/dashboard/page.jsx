@@ -3,6 +3,7 @@ import Input from '@/components/Input';
 import MovieCard from '@/components/MovieCard';
 import { useUser } from '@/utils/GetDataApi';
 import { useState } from 'react';
+import * as Yup from 'yup';
 
 export default function Dashboard() {
   const [post, setPost] = useState({
@@ -19,16 +20,30 @@ export default function Dashboard() {
 
   const [loading, setLoading] = useState(false);
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+  const validationSchema = Yup.object().shape({
+    title: Yup.string().required('Title is required'),
+    genre: Yup.array()
+      .of(Yup.string().required('Genre is required'))
+      .required('Genre is required'),
+
+    imageLink: Yup.string()
+      .required('Image Link is required')
+      .url('Invalid URL format'),
+    movieLink: Yup.string()
+      .required('Movie Link is required')
+      .url('Invalid URL format'),
+  });
 
   const handleSubmit = async (e) => {
     setLoading(true);
     e.preventDefault();
     try {
+      await validationSchema.validate(post);
+
       await fetch('/api/posts', {
         method: 'POST',
         body: JSON.stringify(post),
       });
-      setLoading(false);
       setIsFormSubmitted(true);
       setPost({
         title: '',
@@ -43,6 +58,8 @@ export default function Dashboard() {
       });
     } catch (error) {
       console.log(error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -83,6 +100,7 @@ export default function Dashboard() {
               onChange={(e) =>
                 setPost({ ...post, genre: e.target.value.split(',') })
               }
+              error={isFormSubmitted && validationSchema?.errors?.genre}
             />
             <Input
               placeholder="Release Date"
@@ -113,12 +131,16 @@ export default function Dashboard() {
               placeholder="Image Link"
               value={post.imageLink}
               onChange={(e) => setPost({ ...post, imageLink: e.target.value })}
+              error={isFormSubmitted && validationSchema?.errors?.imageLink}
+              url={true}
             />
 
             <Input
               placeholder="Movie Link"
               value={post.movieLink}
               onChange={(e) => setPost({ ...post, movieLink: e.target.value })}
+              error={isFormSubmitted && validationSchema?.errors?.movieLink}
+              url={true}
             />
             <button
               type="submit"
