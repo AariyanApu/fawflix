@@ -33,4 +33,8 @@ Add database to full homepage
 <!-- Add database to Movie Request -->
 
 Redesign the Movie Details
-add loading animation
+
+<!-- add loading animation -->
+<!-- form validation -->
+
+start mohit at 3 hours

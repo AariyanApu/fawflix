@@ -1,6 +1,6 @@
 'use client';
+import DashboardMovieCard from '@/components/DashboardMovieCard';
 import Input from '@/components/Input';
-import MovieCard from '@/components/MovieCard';
 import { useUser } from '@/utils/GetDataApi';
 import { useState } from 'react';
 import * as Yup from 'yup';
@@ -44,6 +44,7 @@ export default function Dashboard() {
         method: 'POST',
         body: JSON.stringify(post),
       });
+      mutate();
       setIsFormSubmitted(true);
       setPost({
         title: '',
@@ -63,18 +64,19 @@ export default function Dashboard() {
     }
   };
 
-  const { data, isLoading, isError } = useUser();
+  const { data, isLoading, mutate, isError } = useUser();
 
   return (
     <div>
       <div className="flex flex-row w-full">
         <div>
           {data?.reverse().map((movie) => (
-            <MovieCard
+            <DashboardMovieCard
               key={movie._id}
               movie={movie}
-              customStyles=" movie_card w-[130px] h-[200px]  my-2"
+              customStyles=" movie_card w-[250px] h-[200px]  my-2"
               imageStyles=" h-[180px] w-[110px] image_hover "
+              mutate={mutate}
             />
           ))}
         </div>
