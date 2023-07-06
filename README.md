@@ -23,8 +23,9 @@ This website is build for educational purposes only. It is not for commercial us
 
 <!-- Add genre array and display them -->
 
-Add delete POST
-Add Edit POST
+<!-- Add delete POST -->
+<!-- Add Edit POST -->
+
 Add Search Functionality
 Add Pagination
 Add Separate Models for banner
@@ -37,4 +38,10 @@ Redesign the Movie Details
 <!-- add loading animation -->
 <!-- form validation -->
 
-start mohit at 3 hours
+Add movie request database page
+add movie request database delete
+add movie request database card
+
+<!-- start  at 3 hours -->
+
+Add authentication

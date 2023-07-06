@@ -84,7 +84,7 @@ export default function Dashboard() {
     try {
       await validationSchema.validate(post);
 
-      await fetch(`/api/posts/${postId}`, {
+      await fetch(`https://fawflix.vercel.app/api/posts/${postId}`, {
         method: 'PUT',
         body: JSON.stringify(post),
       });

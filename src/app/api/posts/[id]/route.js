@@ -34,6 +34,7 @@ export const DELETE = async (request, { params }) => {
 };
 
 export const PUT = async (request, { params, body }) => {
+  // Update post by id
   const { id } = params;
   const {
     title,
@@ -45,7 +46,8 @@ export const PUT = async (request, { params, body }) => {
     director,
     cast,
     language,
-  } = request.body;
+  } = body;
+  console.log(body);
 
   try {
     await connect();
@@ -71,38 +73,3 @@ export const PUT = async (request, { params, body }) => {
     return new NextResponse('Error updating post', { status: 500 });
   }
 };
-
-// Edit post by id
-// export const PUT = async (request, { params }) => {
-//   const { id } = params;
-//   const {
-//     title,
-//     desc,
-//     imageLink,
-//     movieLink,
-//     genre,
-//     releaseDate,
-//     director,
-//     cast,
-//     language,
-//   } = request.body;
-
-//   try {
-//     await connect();
-//     await Post.findByIdAndUpdate(id, {
-//       title,
-//       desc,
-//       imageLink,
-//       movieLink,
-//       genre,
-//       releaseDate,
-//       director,
-//       cast,
-//       language,
-//     });
-
-//     return new NextResponse('Post has been edited', { status: 200 });
-//   } catch (error) {
-//     return new NextResponse('database error', { status: 500 });
-//   }
-// };
