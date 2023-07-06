@@ -32,3 +32,38 @@ export const DELETE = async (request, { params }) => {
     return new NextResponse('database error', { status: 500 });
   }
 };
+
+// Edit post by id
+export const PUT = async (request, { params }) => {
+  const { id } = params;
+  const {
+    title,
+    desc,
+    imageLink,
+    movieLink,
+    genre,
+    releaseDate,
+    director,
+    cast,
+    language,
+  } = request.body;
+
+  try {
+    await connect();
+    await Post.findByIdAndUpdate(id, {
+      title,
+      desc,
+      imageLink,
+      movieLink,
+      genre,
+      releaseDate,
+      director,
+      cast,
+      language,
+    });
+
+    return new NextResponse('Post has been edited', { status: 200 });
+  } catch (error) {
+    return new NextResponse('database error', { status: 500 });
+  }
+};

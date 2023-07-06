@@ -7,6 +7,7 @@ export default function DashboardMovieCard({
   customStyles,
   imageStyles,
   mutate,
+  handleEdit,
 }) {
   const handleDelete = async (id) => {
     try {
@@ -18,6 +19,7 @@ export default function DashboardMovieCard({
       console.log(error);
     }
   };
+
   return (
     <div
       className={`${customStyles} overflow-hidden hover:shadow-red-700 hover:shadow-md transition-all duration-500 ease-in-out flex flex-row justify-between items-center`}
@@ -31,13 +33,23 @@ export default function DashboardMovieCard({
           className={` object-cover cursor-pointer  image_hover ${imageStyles}} `}
         />
       </Link>
-      <button
-        onClick={() => handleDelete(movie._id)}
-        className="h-10 w-20 bg-red-500 text-white font-bold rounded-md ml-2"
-      >
-        {' '}
-        Delete
-      </button>
+      <div className="flex flex-col gap-4">
+        <button
+          onClick={() => handleDelete(movie._id)}
+          className="h-10 w-20 bg-red-500 text-white font-bold rounded-md ml-2"
+        >
+          {' '}
+          Delete
+        </button>
+
+        <button
+          onClick={() => handleEdit(movie._id)}
+          className="h-10 w-20 bg-red-500 text-white font-bold rounded-md ml-2"
+        >
+          {' '}
+          Edit
+        </button>
+      </div>
     </div>
   );
 }

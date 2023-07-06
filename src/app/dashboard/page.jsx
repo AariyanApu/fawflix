@@ -2,10 +2,11 @@
 import DashboardMovieCard from '@/components/DashboardMovieCard';
 import Input from '@/components/Input';
 import { useUser } from '@/utils/GetDataApi';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import * as Yup from 'yup';
 
 export default function Dashboard() {
+  const [postId, setPostId] = useState(null);
   const [post, setPost] = useState({
     title: '',
     desc: '',
@@ -64,6 +65,50 @@ export default function Dashboard() {
     }
   };
 
+  const handleEdit = async (id) => {
+    setPostId(id);
+  };
+
+  useEffect(() => {
+    if (postId) {
+      // Fetch post data from server
+      fetch(`/api/posts/${postId}`)
+        .then((res) => res.json())
+        .then((data) => setPost(data));
+    }
+  }, [postId]);
+
+  const handleEditSubmit = async (e) => {
+    e.preventDefault();
+    console.log(postId);
+    try {
+      await validationSchema.validate(post);
+
+      await fetch(`/api/posts/${postId}`, {
+        method: 'PUT',
+        body: JSON.stringify(post),
+      });
+      setIsFormSubmitted(true);
+      setPostId(null);
+
+      setPost({
+        title: '',
+        desc: '',
+        imageLink: '',
+        movieLink: '',
+        genre: '',
+        releaseDate: '',
+        director: '',
+        cast: '',
+        language: '',
+      });
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const { data, isLoading, mutate, isError } = useUser();
 
   return (
@@ -77,13 +122,20 @@ export default function Dashboard() {
               customStyles=" movie_card w-[250px] h-[200px]  my-2"
               imageStyles=" h-[180px] w-[110px] image_hover "
               mutate={mutate}
+              handleEdit={handleEdit}
             />
           ))}
         </div>
 
         <div className="ml-36">
-          <h1 className="red_gradient">Add Movies </h1>
-          <form onSubmit={handleSubmit} className="flex flex-col gap-4 w-96">
+          <h1 className="red_gradient">
+            {postId ? 'Edit Movie' : 'Add Movies'}{' '}
+          </h1>
+          <form
+            onSubmit={postId ? handleEditSubmit : handleSubmit}
+            className="flex flex-col gap-4 w-96"
+          >
+            <input type="hidden" name="id" value={postId} />
             <Input
               placeholder="Title"
               value={post.title}
@@ -144,9 +196,10 @@ export default function Dashboard() {
               error={isFormSubmitted && validationSchema?.errors?.movieLink}
               url={true}
             />
+
             <button
               type="submit"
-              onClick={handleSubmit}
+              onClick={postId ? handleEditSubmit : handleSubmit}
               className="button_style"
             >
               {' '}
@@ -155,7 +208,9 @@ export default function Dashboard() {
           </form>
           {isFormSubmitted && (
             <div className="flex flex-col gap-4 w-96">
-              <h1 className="red_gradient">Movie Submitted successfully </h1>
+              <h1 className="red_gradient">
+                Movie {postId ? 'Edited ' : 'Submitted'} successfully{' '}
+              </h1>
             </div>
           )}
         </div>
