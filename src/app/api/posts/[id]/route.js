@@ -33,8 +33,7 @@ export const DELETE = async (request, { params }) => {
   }
 };
 
-// Edit post by id
-export const PUT = async (request, { params }) => {
+export const PUT = async (request, { params, body }) => {
   const { id } = params;
   const {
     title,
@@ -50,20 +49,60 @@ export const PUT = async (request, { params }) => {
 
   try {
     await connect();
-    await Post.findByIdAndUpdate(id, {
-      title,
-      desc,
-      imageLink,
-      movieLink,
-      genre,
-      releaseDate,
-      director,
-      cast,
-      language,
-    });
+    const updatedPost = await Post.findByIdAndUpdate(
+      id,
+      {
+        title,
+        desc,
+        imageLink,
+        movieLink,
+        genre,
+        releaseDate,
+        director,
+        cast,
+        language,
+      },
+      { new: true, runValidators: true },
+    );
 
-    return new NextResponse('Post has been edited', { status: 200 });
+    return new NextResponse(JSON.stringify(updatedPost), { status: 200 });
   } catch (error) {
-    return new NextResponse('database error', { status: 500 });
+    console.error(error);
+    return new NextResponse('Error updating post', { status: 500 });
   }
 };
+
+// Edit post by id
+// export const PUT = async (request, { params }) => {
+//   const { id } = params;
+//   const {
+//     title,
+//     desc,
+//     imageLink,
+//     movieLink,
+//     genre,
+//     releaseDate,
+//     director,
+//     cast,
+//     language,
+//   } = request.body;
+
+//   try {
+//     await connect();
+//     await Post.findByIdAndUpdate(id, {
+//       title,
+//       desc,
+//       imageLink,
+//       movieLink,
+//       genre,
+//       releaseDate,
+//       director,
+//       cast,
+//       language,
+//     });
+
+//     return new NextResponse('Post has been edited', { status: 200 });
+//   } catch (error) {
+//     return new NextResponse('database error', { status: 500 });
+//   }
+// };

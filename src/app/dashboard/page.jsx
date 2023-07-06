@@ -80,7 +80,7 @@ export default function Dashboard() {
 
   const handleEditSubmit = async (e) => {
     e.preventDefault();
-    console.log(postId);
+
     try {
       await validationSchema.validate(post);
 
@@ -203,14 +203,16 @@ export default function Dashboard() {
               className="button_style"
             >
               {' '}
-              {!loading ? 'Submit Movie ' : 'Movie Submitting...'}
+              {!loading
+                ? postId
+                  ? 'Edit Movie '
+                  : 'Add Movie'
+                : 'Movie Submitting...'}
             </button>
           </form>
           {isFormSubmitted && (
             <div className="flex flex-col gap-4 w-96">
-              <h1 className="red_gradient">
-                Movie {postId ? 'Edited ' : 'Submitted'} successfully{' '}
-              </h1>
+              <h1 className="red_gradient">Movie submitted successfully </h1>
             </div>
           )}
         </div>
