@@ -175,6 +175,8 @@ export const filterPrompts = (searchtext, data) => {
       regex.test(item.title) ||
       regex.test(item.desc) ||
       regex.test(item.genre) ||
+      regex.test(item.cast) ||
+      regex.test(item.director) ||
       regex.test(item.language),
   );
 };
