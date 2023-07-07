@@ -48,4 +48,4 @@ Add authentication
 
 <!-- Add hover effect to dashboard -->
 
-Slice dashboard
+<!-- Slice dashboard -->

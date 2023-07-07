@@ -1,11 +1,15 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
 export default function SearchBar() {
+  const router = useRouter();
+
   const [searchText, setSearchText] = useState('');
   const handleSearchChange = (e) => {
     setSearchText(e.target.value);
+    router.push(`/search/${searchText}`);
   };
   return (
     <form className="">

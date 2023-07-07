@@ -14,7 +14,7 @@ export default async function ViewMore({ params }) {
       <div className=" flex sm:flex-row flex-col flex-wrap sm:justify-between items-center justify-center sm:px-4 ">
         {data?.reverse().map((movie) => (
           <MovieCard
-            key={movie.imageLink}
+            key={movie._id}
             movie={movie}
             customStyles=" movie_card w-[230px] h-[350px]  my-2"
             imageStyles=" h-[330px] w-[210px] image_hover "
