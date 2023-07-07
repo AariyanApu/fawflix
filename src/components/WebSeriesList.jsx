@@ -6,12 +6,15 @@ import 'swiper/css/free-mode';
 import 'swiper/css/navigation';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import { slideImages } from '@/utils/data';
+import { useUser } from '@/utils/GetDataApi';
+import { filterPrompts } from '@/utils/data';
 import MovieCard from './MovieCard';
 import Title from './Title';
 
 export default function WebSeriesList() {
-  const lastTenMovies = slideImages.slice(-10);
+  const { data, isLoading, isError } = useUser();
+  const webSeries = filterPrompts('web-series', data);
+  // const lastTenMovies = slideImages.slice(-10);
 
   return (
     <div className="sm:mt-16 mt-8">
@@ -37,7 +40,7 @@ export default function WebSeriesList() {
         modules={[FreeMode, Navigation]}
         className="mySwiper sm:w-[1280px] h-fit w-96  "
       >
-        {lastTenMovies?.map((movie) => (
+        {webSeries?.map((movie) => (
           <SwiperSlide
             key={movie.imageLink}
             className="text-center text-lg bg-gray-950 flex justify-between items-center rounded-lg sm:py-4 sm:pl-6 "

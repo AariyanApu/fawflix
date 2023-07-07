@@ -2,28 +2,12 @@
 
 import MovieCard from '@/components/MovieCard';
 import { useUser } from '@/utils/GetDataApi';
-import { useState } from 'react';
+import { filterPrompts } from '@/utils/data';
 
 export default function SearchResultFeed({ params }) {
   const { data, isLoading, isError } = useUser();
   const id = params.id;
-
-  const [searchText, setSearchText] = useState(' ');
-  const [searchTimeout, setSearchTimeout] = useState(null);
-  const [searchedResults, setSearchedResults] = useState([]);
-
-  const filterPrompts = (searchtext) => {
-    const regex = new RegExp(searchtext, 'i'); // 'i' flag for case-insensitive search
-    return data?.filter(
-      (item) =>
-        regex.test(item.title) ||
-        regex.test(item.desc) ||
-        regex.test(item.genre),
-    );
-  };
-
-  const dataFromUrl = filterPrompts(id);
-
+  const dataFromUrl = filterPrompts(id, data);
   return (
     <div className="flex sm:flex-row flex-col flex-wrap sm:justify-between items-center justify-center sm:px-4 gap-5">
       {dataFromUrl?.map((movie) => (

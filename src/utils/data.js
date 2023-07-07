@@ -167,3 +167,11 @@ export const helpInfo = [
     customStyles: 'hidden sm:flex',
   },
 ];
+
+export const filterPrompts = (searchtext, data) => {
+  const regex = new RegExp(searchtext, 'i'); // 'i' flag for case-insensitive search
+  return data?.filter(
+    (item) =>
+      regex.test(item.title) || regex.test(item.desc) || regex.test(item.genre),
+  );
+};
