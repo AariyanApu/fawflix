@@ -1,8 +1,10 @@
 'use client';
 import DashboardMovieCard from '@/components/DashboardMovieCard';
 import Input from '@/components/Input';
+import MovieRequestCard from '@/components/MovieRequestCard';
 import { useUser } from '@/utils/GetDataApi';
 import { useEffect, useState } from 'react';
+import useSWR from 'swr';
 import * as Yup from 'yup';
 
 export default function Dashboard() {
@@ -84,7 +86,7 @@ export default function Dashboard() {
     try {
       await validationSchema.validate(post);
 
-      await fetch(`https://fawflix.vercel.app/api/posts/${postId}`, {
+      await fetch(`/api/posts/${postId}`, {
         method: 'PUT',
         body: JSON.stringify(post),
       });
@@ -110,6 +112,15 @@ export default function Dashboard() {
   };
 
   const { data, isLoading, mutate, isError } = useUser();
+
+  const fetcher = (...args) => fetch(...args).then((res) => res.json());
+  const { data: movieCardData, mutate: mutate1 } = useSWR(
+    '/api/help',
+    fetcher,
+    {
+      refreshInterval: 1000,
+    },
+  );
 
   return (
     <div>
@@ -215,6 +226,19 @@ export default function Dashboard() {
               <h1 className="red_gradient">Movie submitted successfully </h1>
             </div>
           )}
+          {/* Movie Request Card */}
+          <div className="flex flex-col gap-4 w-96 mt-10">
+            <h1 className="red_gradient">Movie Request</h1>
+            <div className="flex flex-col gap-4 w-96">
+              {movieCardData?.reverse().map((movie) => (
+                <MovieRequestCard
+                  key={movie._id}
+                  movie={movie}
+                  mutate1={mutate1}
+                />
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </div>
