@@ -13,6 +13,13 @@ const Slide = () => {
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
   const { data, isLoading, isError } = useSWR('/api/banner', fetcher);
 
+  if (isLoading)
+    return (
+      <div>
+        <div className="sm:w-[1280px] sm:h-[500px] w-[340px] h-40 sm:my-2 break-inside-avoid rounded-lg border p-2 border-red-600 bg-gray-900/75 bg-clip-padding  backdrop-blur-xl backdrop-filter transition-all duration-500 animate-pulse overflow-hidden" />
+      </div>
+    );
+
   return (
     <div className="">
       <Swiper
