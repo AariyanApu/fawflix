@@ -37,10 +37,8 @@ export default async function Video({ params }) {
         {/* Movie Card Poster */}
         <img
           src={data.imageLink}
-          alt="poster"
-          width={200}
-          height={300}
-          className="rounded-md"
+          alt={data.title}
+          className="rounded-md h-[330px] w-[210px] object-cover "
         />
         <div className="red_gradient sm:ml-10 mt-4 sm:mt-0">
           {/* movie card descriptions */}
