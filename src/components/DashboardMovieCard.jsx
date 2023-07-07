@@ -36,7 +36,7 @@ export default function DashboardMovieCard({
       <div className="flex flex-col gap-4">
         <button
           onClick={() => handleDelete(movie._id)}
-          className="h-10 w-20 bg-red-500 text-white font-bold rounded-md ml-2"
+          className="h-10 w-20 button_style"
         >
           {' '}
           Delete
@@ -44,7 +44,7 @@ export default function DashboardMovieCard({
 
         <button
           onClick={() => handleEdit(movie._id)}
-          className="h-10 w-20 bg-red-500 text-white font-bold rounded-md ml-2"
+          className="h-10 w-20 button_style"
         >
           {' '}
           Edit

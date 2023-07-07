@@ -38,10 +38,14 @@ Redesign the Movie Details
 <!-- add loading animation -->
 <!-- form validation -->
 
-Add movie request database page
-add movie request database delete
-add movie request database card
+<!-- Add movie request database page -->
+<!-- add movie request database delete -->
+<!-- add movie request database card -->
 
 <!-- start  at 3 hours -->
 
 Add authentication
+
+<!-- Add hover effect to dashboard -->
+
+Slice dashboard

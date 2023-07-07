@@ -22,7 +22,7 @@ export default function MovieRequestCard({ movie, mutate1 }) {
         className="ml-5"
         onClick={() => handleDelete(movie._id)}
       >
-        <HiOutlineTrash className="h-6 w-6" />
+        <HiOutlineTrash className="h-6 w-6 icon_style " />
       </button>
     </div>
   );
