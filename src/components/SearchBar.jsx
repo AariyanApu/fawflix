@@ -6,7 +6,7 @@ import { useState } from 'react';
 export default function SearchBar() {
   const router = useRouter();
 
-  const [searchText, setSearchText] = useState({ title: ' ' });
+  const [searchText, setSearchText] = useState({ title: '' });
 
   const handleSubmit = (e) => {
     e.preventDefault();

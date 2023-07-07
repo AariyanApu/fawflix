@@ -9,6 +9,7 @@ import * as Yup from 'yup';
 
 export default function Dashboard() {
   const [postId, setPostId] = useState(null);
+  const [addBanner, setAddBanner] = useState(false);
   const [post, setPost] = useState({
     title: '',
     desc: '',
@@ -42,11 +43,16 @@ export default function Dashboard() {
     e.preventDefault();
     try {
       await validationSchema.validate(post);
+      addBanner
+        ? await fetch('/api/banner', {
+            method: 'POST',
+            body: JSON.stringify(post),
+          })
+        : await fetch('/api/posts', {
+            method: 'POST',
+            body: JSON.stringify(post),
+          });
 
-      await fetch('/api/posts', {
-        method: 'POST',
-        body: JSON.stringify(post),
-      });
       mutate();
       setIsFormSubmitted(true);
       setPost({
@@ -117,13 +123,7 @@ export default function Dashboard() {
   // Fetch data for Movie Request Card
 
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
-  const { data: movieCardData, mutate: mutate1 } = useSWR(
-    '/api/help',
-    fetcher,
-    {
-      refreshInterval: 1000,
-    },
-  );
+  const { data: movieCardData, mutate: mutate1 } = useSWR('/api/help', fetcher);
 
   return (
     <div>
@@ -142,9 +142,23 @@ export default function Dashboard() {
         </div>
 
         <div className="ml-36">
-          <h1 className="red_gradient">
-            {postId ? 'Edit Movie' : 'Add Movies'}{' '}
-          </h1>
+          <div className="flex justify-between items-center my-4">
+            <h1 className="red_gradient">
+              {postId
+                ? 'Edit Movie'
+                : addBanner
+                ? 'Add Banner '
+                : 'Add Movies '}
+              Here ...
+            </h1>
+
+            <button
+              onClick={() => setAddBanner((prevValue) => !prevValue)}
+              className="button_style h-10 w-28"
+            >
+              {addBanner ? 'Add Movies' : 'Add Banner'}
+            </button>
+          </div>
           <DashboardForm
             postId={postId}
             handleSubmit={handleSubmit}
