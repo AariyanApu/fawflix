@@ -62,11 +62,12 @@ export default function Footer() {
                 onChange={(e) =>
                   setMovieRequest({ ...movieRequest, title: e.target.value })
                 }
+                error={isFormSubmitted && validationSchema?.errors?.title}
               />
               <div className="mt-4 rounded-md sm:mt-0 sm:ml-4 sm:flex-shrink-0">
                 <button
                   type="submit"
-                  className="button_style"
+                  className="button_style w-full"
                   onClick={handleSubmit}
                 >
                   {!loading ? 'Upload It Now' : 'Requesting...'}

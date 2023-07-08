@@ -26,10 +26,12 @@ This website is build for educational purposes only. It is not for commercial us
 <!-- Add delete POST -->
 <!-- Add Edit POST -->
 
-Add Search Functionality
+<!-- Add Search Functionality -->
+
 Add Pagination
-Add Separate Models for banner
-Add database to full homepage
+
+<!-- Add Separate Models for banner -->
+<!-- Add database to full homepage -->
 
 <!-- Add database to Movie Request -->
 
@@ -49,3 +51,5 @@ Add authentication
 <!-- Add hover effect to dashboard -->
 
 <!-- Slice dashboard -->
+
+fix mobile view

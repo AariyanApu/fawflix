@@ -43,7 +43,7 @@ const Slide = () => {
           >
             <Link href={slide.movieLink}>
               <LazyLoadImage
-                className="block  h-[500px] object-cover rounded-lg w-full"
+                className="block  sm:h-[500px] h-40 object-cover rounded-lg w-full"
                 src={slide.imageLink}
                 alt={slide.title}
               />
