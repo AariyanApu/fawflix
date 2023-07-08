@@ -1,19 +1,26 @@
-import BanglaMovieList from '@/components/BanglaMovieList';
-import EnglishMovieList from '@/components/EnglishMovieList';
-import HindiMovieList from '@/components/HindiMovieList';
-import HotList from '@/components/HotList';
-import Slide from '@/components/Slide';
-import WebSeriesList from '@/components/WebSeriesList';
+'use client';
+import {
+  BanglaMovie,
+  BollywoodMovie,
+  DubbingMovie,
+  HollywoodMovie,
+  HotList,
+  Slide,
+  TollywoodMovie,
+  WebSeries,
+} from '@/components';
 
 const Home = () => {
   return (
     <section className="sm:px-16 px-3">
       <Slide />
       <HotList />
-      <WebSeriesList />
-      <BanglaMovieList />
-      <EnglishMovieList />
-      <HindiMovieList />
+      <WebSeries />
+      <BanglaMovie />
+      <BollywoodMovie />
+      <HollywoodMovie />
+      <TollywoodMovie />
+      <DubbingMovie />
     </section>
   );
 };

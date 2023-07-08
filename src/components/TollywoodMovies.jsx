@@ -10,17 +10,17 @@ import { filterPrompts } from '@/utils/data';
 import MovieCard from './MovieCard';
 import Title from './Title';
 
-export default function EnglishMovieList() {
+export default function TamilMovieList() {
   const { data, isLoading, isError } = useUser();
-  const movies = filterPrompts('English', data);
+  const movies = filterPrompts('Tamil', data);
 
   // const lastTenMovies = movePoster.slice(-10);
 
   return (
     <div className="sm:mt-16 mt-8 ">
       <Title
-        title="English Movie"
-        link="/viewmore/english"
+        title="Tollywood Movies"
+        link="/viewmore/tamil"
         linkName="View More"
       />
       <Swiper

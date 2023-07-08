@@ -52,4 +52,4 @@ Add authentication
 
 <!-- Slice dashboard -->
 
-fix mobile view
+<!-- fix mobile view -->

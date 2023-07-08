@@ -11,7 +11,7 @@ import { filterPrompts } from '@/utils/data';
 import MovieCard from './MovieCard';
 import Title from './Title';
 
-export default function HindiMovieList() {
+export default function BollywoodMovieList() {
   const { data, isLoading, isError } = useUser();
   const movies = filterPrompts('Hindi', data);
 
