@@ -11,7 +11,7 @@ export default function HotList() {
 
   return (
     <div className="sm:mt-16 mt-8 ">
-      <Title title="Hot Cake" link="/viewmore/hotlist" linkName="View More" />
+      <Title title="Hot Cake" link="/viewmore/" linkName="View More" />
       <div className=" flex sm:flex-row flex-col flex-wrap sm:justify-between items-center justify-center sm:px-4 ">
         {data
           ?.slice(-10)

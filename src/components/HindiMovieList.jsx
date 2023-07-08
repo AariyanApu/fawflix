@@ -21,7 +21,7 @@ export default function HindiMovieList() {
     <div className="sm:mt-16 mt-8">
       <Title
         title="Bollywood Movies"
-        link="/viewmore/hindi-movie"
+        link="/viewmore/hindi"
         linkName="View More"
       />
       <Swiper
