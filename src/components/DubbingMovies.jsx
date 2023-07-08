@@ -20,7 +20,7 @@ export default function DubbingMovieList() {
     <div className="sm:mt-16 mt-8 ">
       <Title
         title="Dubbing Movies"
-        link="/viewmore/english"
+        link="/viewmore/dubbing"
         linkName="View More"
       />
       <Swiper
