@@ -37,13 +37,13 @@ export default function Footer() {
       <div className=" red_gradient_border w-full mt-10   sm:mt-20 lg:mt-24" />
       <div className=" lg:flex lg:items-center lg:justify-between px-2 pt-8">
         <div>
-          <div>
+          <div className="text-center items-center">
             {/* Request to Upload Movie  */}
-            <h3 className="sm:text-2xl text-lx leading-6 red_gradient text-center sm:text-left font-semibold">
+            <h3 className="sm:text-2xl text-lx leading-6 red_gradient  sm:text-left font-semibold items-center">
               {' '}
               The Movie... You wish to watch !{' '}
             </h3>
-            <p className="mt-2 text-xs leading-6 red_gradient font-normal">
+            <p className="mt-2 text-xs leading-6 red_gradient font-normal sm:text-left">
               Please write the name of that movie, and we will upload that.
             </p>
           </div>
