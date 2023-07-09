@@ -3,6 +3,7 @@ import DashboardForm from '@/components/DashboardForm';
 import DashboardMovieCard from '@/components/DashboardMovieCard';
 import MovieRequestCard from '@/components/MovieRequestCard';
 import { useUser } from '@/utils/GetDataApi';
+import { signIn, signOut, useSession } from 'next-auth/react';
 import { useEffect, useState } from 'react';
 import useSWR from 'swr';
 import * as Yup from 'yup';
@@ -125,70 +126,92 @@ export default function Dashboard() {
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
   const { data: movieCardData, mutate: mutate1 } = useSWR('/api/help', fetcher);
 
-  return (
-    <div>
-      <div className="flex flex-row w-full">
-        <div>
-          {data?.reverse().map((movie) => (
-            <DashboardMovieCard
-              key={movie._id}
-              movie={movie}
-              customStyles=" movie_card w-[250px] h-[200px]  my-2"
-              imageStyles=" h-[180px] w-[110px] image_hover "
-              mutate={mutate}
-              handleEdit={handleEdit}
-            />
-          ))}
-        </div>
+  // Authentication
+  const { data: session, status } = useSession();
+  const userEmail = session?.user?.email;
 
-        <div className="ml-36">
-          <div className="flex justify-between items-center my-4">
-            <h1 className="red_gradient">
-              {postId
-                ? 'Edit Movie'
-                : addBanner
-                ? 'Add Banner '
-                : 'Add Movies '}
-              Here ...
-            </h1>
+  if (status === 'loading') {
+    return <p>Hang on there...</p>;
+  }
 
-            <button
-              onClick={() => setAddBanner((prevValue) => !prevValue)}
-              className="button_style h-10 w-28"
-            >
-              {addBanner ? 'Add Movies' : 'Add Banner'}
-            </button>
+  if ((status === 'authenticated') & (userEmail === 'fawflix44@gmail.com')) {
+    return (
+      <div>
+        <div className="flex flex-row w-full">
+          <div>
+            {data?.reverse().map((movie) => (
+              <DashboardMovieCard
+                key={movie._id}
+                movie={movie}
+                customStyles=" movie_card w-[250px] h-[200px]  my-2"
+                imageStyles=" h-[180px] w-[110px] image_hover "
+                mutate={mutate}
+                handleEdit={handleEdit}
+                addBanner={addBanner}
+              />
+            ))}
           </div>
-          <DashboardForm
-            postId={postId}
-            handleSubmit={handleSubmit}
-            handleEditSubmit={handleEditSubmit}
-            post={post}
-            setPost={setPost}
-            loading={loading}
-            isFormSubmitted={isFormSubmitted}
-            validationSchema={validationSchema}
-          />
-          {isFormSubmitted && (
-            <div className="flex flex-col gap-4 w-96">
-              <h1 className="red_gradient">Movie submitted successfully </h1>
+
+          <div className="ml-36">
+            <div className="flex justify-between items-center my-4">
+              <h1 className="red_gradient">
+                {postId
+                  ? 'Edit Movie'
+                  : addBanner
+                  ? 'Add Banner '
+                  : 'Add Movies '}
+                Here ...
+              </h1>
+
+              <button
+                onClick={() => setAddBanner((prevValue) => !prevValue)}
+                className="button_style h-10 w-28"
+              >
+                {addBanner ? 'Add Movies' : 'Add Banner'}
+              </button>
             </div>
-          )}
-          {/* Movie Request Card */}
-          <div className="flex flex-col gap-4 w-96 mt-10">
-            <h1 className="red_gradient">Movie Request</h1>
-            <div className="flex flex-col gap-4 w-96">
-              {movieCardData?.reverse().map((movie) => (
-                <MovieRequestCard
-                  key={movie._id}
-                  movie={movie}
-                  mutate1={mutate1}
-                />
-              ))}
+            <DashboardForm
+              postId={postId}
+              handleSubmit={handleSubmit}
+              handleEditSubmit={handleEditSubmit}
+              post={post}
+              setPost={setPost}
+              loading={loading}
+              isFormSubmitted={isFormSubmitted}
+              validationSchema={validationSchema}
+            />
+            <button onClick={() => signOut()}>Sign out</button>
+
+            {isFormSubmitted && (
+              <div className="flex flex-col gap-4 w-96">
+                <h1 className="red_gradient">Movie submitted successfully </h1>
+              </div>
+            )}
+            {/* Movie Request Card */}
+            <div className="flex flex-col gap-4 w-96 mt-10">
+              <h1 className="red_gradient">Movie Request</h1>
+              <div className="flex flex-col gap-4 w-96">
+                {movieCardData?.reverse().map((movie) => (
+                  <MovieRequestCard
+                    key={movie._id}
+                    movie={movie}
+                    mutate1={mutate1}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    return (
+      <div>
+        <h1>You are not authorized to view this page</h1>
+        <button onClick={() => signIn('google')} className="button_style mt-5 ">
+          Sign in
+        </button>
+      </div>
+    );
+  }
 }

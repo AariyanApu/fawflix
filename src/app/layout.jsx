@@ -1,5 +1,6 @@
 import Footer from '@/components/Footer';
 import NavBar from '@/components/NavBar';
+import Provider from '@/components/Provider';
 import localFont from 'next/font/local';
 import './globals.css';
 
@@ -14,11 +15,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${primaryFont.className} bg-gray-950`}>
-        <main className="app">
-          <NavBar />
-          {children}
-          <Footer />
-        </main>
+        <Provider>
+          <main className="app">
+            <NavBar />
+            {children}
+            <Footer />
+          </main>
+        </Provider>
       </body>
     </html>
   );

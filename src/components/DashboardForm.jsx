@@ -9,6 +9,7 @@ export default function DashboardForm({
   isFormSubmitted,
   validationSchema,
   loading,
+  addBanner,
 }) {
   return (
     <form
@@ -83,7 +84,9 @@ export default function DashboardForm({
         {!loading
           ? postId
             ? 'Edit Movie '
-            : 'Add Movie'
+            : addBanner
+            ? 'Add Banner '
+            : 'Add Movies '
           : 'Movie Submitting...'}
       </button>
     </form>

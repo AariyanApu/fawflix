@@ -10,7 +10,7 @@ import { filterPrompts } from '@/utils/data';
 import MovieCard from './MovieCard';
 import Title from './Title';
 
-export default function TamilMovieList() {
+export default function TollywoodMovieList() {
   const { data, isLoading, isError } = useUser();
   const movies = filterPrompts('Tamil', data);
 
