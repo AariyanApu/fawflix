@@ -1,5 +1,5 @@
 'use client';
-import { useUser } from '@/utils/GetDataApi';
+import useUser from '@/utils/GetDataApi';
 import MovieCard from './MovieCard';
 import MovieCardLoading from './MovieCardLoading';
 import Title from './Title';

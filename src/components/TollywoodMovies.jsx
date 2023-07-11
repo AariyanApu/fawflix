@@ -5,7 +5,7 @@ import 'swiper/css/free-mode';
 import 'swiper/css/navigation';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import { useUser } from '@/utils/GetDataApi';
+import useUser from '@/utils/GetDataApi';
 import { filterPrompts } from '@/utils/data';
 import MovieCard from './MovieCard';
 import Title from './Title';
