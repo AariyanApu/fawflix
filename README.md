@@ -10,7 +10,7 @@ This website is build for educational purposes only. It is not for commercial us
 
 <!-- - Add Hindi Movies Section -->
 
-- Add Tamil Movies Section
+<!-- - Add Tamil Movies Section -->
   <!-- - Add Hover Effect on MoviesCard -->
   <!-- - Add Typing Functionality on Footer Search -->
   <!-- - Make Navbar Search Text red while typing -->
@@ -46,7 +46,7 @@ Redesign the Movie Details
 
 <!-- start  at 3 hours -->
 
-Add authentication
+<!-- Add authentication -->
 
 <!-- Add hover effect to dashboard -->
 
