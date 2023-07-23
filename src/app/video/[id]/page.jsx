@@ -29,10 +29,7 @@ export default async function Video({ params }) {
 
   return (
     <div className="w-full">
-      <VideoPlayer
-        url={data.movieLink}
-        customStyles={'w-full sm:h-[720px] h-80'}
-      />
+      <VideoPlayer url={data.movieLink} customStyles={'w-full'} />
       <div className="mt-10 flex  ml-1 sm:flex-row flex-col items-start justify-start sm:px-20 px-4">
         {/* Movie Card Poster */}
         <img
