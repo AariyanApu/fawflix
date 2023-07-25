@@ -2,7 +2,7 @@
 import MovieCard from '@/components/MovieCard';
 import MovieCardLoading from '@/components/MovieCardLoading';
 import Title from '@/components/Title';
-import { useUser } from '@/utils/GetDataApi';
+import useUser from '@/utils/GetDataApi';
 import { filterPrompts } from '@/utils/data';
 
 export default async function ViewMore({ params }) {

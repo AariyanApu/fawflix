@@ -1,7 +1,7 @@
 'use client';
 
 import MovieCard from '@/components/MovieCard';
-import { useUser } from '@/utils/GetDataApi';
+import useUser from '@/utils/GetDataApi';
 import { filterPrompts } from '@/utils/data';
 
 export default function SearchResultFeed({ params }) {

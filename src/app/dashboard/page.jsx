@@ -2,7 +2,7 @@
 import DashboardForm from '@/components/DashboardForm';
 import DashboardMovieCard from '@/components/DashboardMovieCard';
 import MovieRequestCard from '@/components/MovieRequestCard';
-import { useUser } from '@/utils/GetDataApi';
+import useUser from '@/utils/GetDataApi';
 import { signIn, signOut, useSession } from 'next-auth/react';
 import { useEffect, useState } from 'react';
 import useSWR from 'swr';
