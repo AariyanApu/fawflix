@@ -1,4 +1,3 @@
-'use client';
 import HelpCard from '@/components/HelpCard';
 import { helpInfo } from '@/utils/data';
 

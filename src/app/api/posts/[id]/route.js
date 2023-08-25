@@ -47,7 +47,6 @@ export const PUT = async (request, { params, body }) => {
     cast,
     language,
   } = body;
-  console.log(body);
 
   try {
     await connect();
