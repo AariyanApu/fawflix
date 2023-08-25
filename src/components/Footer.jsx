@@ -117,11 +117,11 @@ export default function Footer() {
         {/* Footer Credit */}
 
         <div className="flex flex-col sm:text-right ">
-          <FooterCreditCard
+          {/* <FooterCreditCard
             name="Avro Ibne-Hayder"
             link="https://www.facebook.com/mdsohel.hayder.1"
             desc="Link share and maintenance by "
-          />
+          /> */}
           <FooterCreditCard
             name="Aariyan Apu"
             link="https://www.aariyanapu.com/"
