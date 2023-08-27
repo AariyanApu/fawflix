@@ -15,14 +15,14 @@ export default function BollywoodMovieList() {
   const { data, isLoading, isError } = useUser();
   const movies = filterPrompts('Hindi', data);
 
-  // const lastTenMovies = movePoster.slice(-10);
+  const lastTenMovies = movies.slice(-10);
 
   return (
-    <div className="sm:mt-16 mt-8">
+    <div className='sm:mt-16 mt-8'>
       <Title
-        title="Bollywood Movies"
-        link="/viewmore/hindi"
-        linkName="View More"
+        title='Bollywood Movies'
+        link='/viewmore/hindi'
+        linkName='View More'
       />
       <Swiper
         navigation={true}
@@ -38,14 +38,14 @@ export default function BollywoodMovieList() {
         }}
         freeMode={true}
         modules={[FreeMode, Navigation]}
-        className="mySwiper sm:w-[1280px] w-96 h-fit   "
+        className='mySwiper sm:w-[1280px] w-96 h-fit   '
       >
-        {movies?.map((movie) => (
-          <SwiperSlide key={movie.imageLink} className=" movie_card_portrait ">
+        {lastTenMovies?.map((movie) => (
+          <SwiperSlide key={movie.imageLink} className=' movie_card_portrait '>
             <MovieCard
               movie={movie}
-              customStyles="movie_card h-[350px] w-[230px] mx-auto"
-              imageStyles=" portrait_img "
+              customStyles='movie_card h-[350px] w-[230px] mx-auto'
+              imageStyles=' portrait_img '
             />
           </SwiperSlide>
         ))}

@@ -14,14 +14,14 @@ import Title from './Title';
 export default function WebSeriesList() {
   const { data, isLoading, isError } = useUser();
   const webSeries = filterPrompts('web-series', data);
-  // const lastTenMovies = slideImages.slice(-10);
+  const lastTenMovies = webSeries?.slice(-10)?.reverse();
 
   return (
-    <div className="sm:mt-16 mt-8">
+    <div className='sm:mt-16 mt-8'>
       <Title
-        title="Web Series"
-        link="/viewmore/web-series"
-        linkName="View More"
+        title='Web Series'
+        link='/viewmore/web-series'
+        linkName='View More'
       />
 
       <Swiper
@@ -38,17 +38,17 @@ export default function WebSeriesList() {
         }}
         freeMode={true}
         modules={[FreeMode, Navigation]}
-        className="mySwiper sm:w-[1280px] h-fit w-96  "
+        className='mySwiper sm:w-[1280px] h-fit w-96  '
       >
-        {webSeries?.map((movie) => (
+        {lastTenMovies?.map((movie) => (
           <SwiperSlide
             key={movie.imageLink}
-            className="text-center text-lg bg-gray-950 flex justify-between items-center rounded-lg sm:py-4 sm:pl-6 "
+            className='text-center text-lg bg-gray-950 flex justify-between items-center rounded-lg sm:py-4 sm:pl-6 '
           >
             <MovieCard
               movie={movie}
-              customStyles="movie_card h-fit sm:w-[380px] w-96 overflow-hidden"
-              imageStyles="h-[190px] w-full hover:scale-95 transition duration-500 ease-in-out  rounded-xl"
+              customStyles='movie_card h-fit sm:w-[380px] w-96 overflow-hidden'
+              imageStyles='h-[190px] w-full hover:scale-95 transition duration-500 ease-in-out  rounded-xl'
             />
           </SwiperSlide>
         ))}
