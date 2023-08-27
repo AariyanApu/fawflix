@@ -14,8 +14,8 @@ export default function MovieCard({ movie, customStyles, imageStyles }) {
           alt={movie.title}
           className={`  object-cover cursor-pointer  image_hover ${imageStyles}} `}
         />
-        <div className="opacity-30 top-0 left-0 w-full h-full  absolute   rounded-md bg-gradient-to-t from-black to-transparent  group-hover:opacity-50" />
-        <h1 className="absolute bottom-4 left-1/2 -translate-x-1/2 w-full text-center font-semibold text-white hidden group-hover:block px-4 ">
+        <div className='opacity-30 top-0 left-0 w-full h-full  absolute   rounded-md bg-gradient-to-t from-black to-transparent  group-hover:opacity-50' />
+        <h1 className='absolute bottom-4 left-1/2 -translate-x-1/2 w-full text-center font-semibold text-white  group-hover:opacity-100 opacity-0 transition-opacity duration-500 ease-in-out px-4 '>
           {movie.title}
         </h1>
       </Link>
