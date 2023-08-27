@@ -15,7 +15,7 @@ export default function BollywoodMovieList() {
   const { data, isLoading, isError } = useUser();
   const movies = filterPrompts('Hindi', data);
 
-  const lastTenMovies = movies.slice(-10);
+  const lastTenMovies = movies?.slice(-10).reverse();
 
   return (
     <div className='sm:mt-16 mt-8'>
