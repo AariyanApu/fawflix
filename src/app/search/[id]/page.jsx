@@ -1,15 +1,15 @@
-'use client';
+"use client";
 
-import MovieCard from '@/components/MovieCard';
-import useUser from '@/utils/GetDataApi';
-import { filterPrompts } from '@/utils/data';
+import MovieCard from "@/components/MovieCard";
+import useUser from "@/utils/GetDataApi";
+import { filterPrompts } from "@/utils/data";
 
 export default function SearchResultFeed({ params }) {
   const { data, isLoading, isError } = useUser();
   const id = params.id;
   const dataFromUrl = filterPrompts(id, data);
   return (
-    <div className="flex sm:flex-row flex-col flex-wrap sm:justify-between items-center justify-center sm:px-4 gap-5">
+    <div className="flex flex-col flex-wrap items-center justify-center gap-5 sm:flex-row sm:justify-between sm:px-4">
       {dataFromUrl?.map((movie) => (
         <MovieCard
           key={movie._id}

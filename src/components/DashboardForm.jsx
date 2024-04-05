@@ -1,4 +1,4 @@
-import Input from './Input';
+import Input from "./Input";
 
 export default function DashboardForm({
   handleSubmit,
@@ -14,7 +14,7 @@ export default function DashboardForm({
   return (
     <form
       onSubmit={postId ? handleEditSubmit : handleSubmit}
-      className="flex flex-col gap-4 w-96"
+      className="flex w-96 flex-col gap-4"
     >
       <input type="hidden" name="id" value={postId} />
       <Input
@@ -33,7 +33,7 @@ export default function DashboardForm({
       <Input
         placeholder="Genre"
         value={post.genre}
-        onChange={(e) => setPost({ ...post, genre: e.target.value.split(',') })}
+        onChange={(e) => setPost({ ...post, genre: e.target.value.split(",") })}
         error={isFormSubmitted && validationSchema?.errors?.genre}
       />
       <Input
@@ -80,14 +80,14 @@ export default function DashboardForm({
         onClick={postId ? handleEditSubmit : handleSubmit}
         className="button_style"
       >
-        {' '}
+        {" "}
         {!loading
           ? postId
-            ? 'Edit Movie '
+            ? "Edit Movie "
             : addBanner
-            ? 'Add Banner '
-            : 'Add Movies '
-          : 'Movie Submitting...'}
+              ? "Add Banner "
+              : "Add Movies "
+          : "Movie Submitting..."}
       </button>
     </form>
   );

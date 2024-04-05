@@ -1,8 +1,8 @@
-'use client';
-import useUser from '@/utils/GetDataApi';
-import MovieCard from './MovieCard';
-import MovieCardLoading from './MovieCardLoading';
-import Title from './Title';
+"use client";
+import useUser from "@/utils/GetDataApi";
+import MovieCard from "./MovieCard";
+import MovieCardLoading from "./MovieCardLoading";
+import Title from "./Title";
 
 export default function HotList() {
   const { data, isLoading, isError } = useUser();
@@ -10,9 +10,9 @@ export default function HotList() {
   if (!data) return <MovieCardLoading />;
 
   return (
-    <div className="sm:mt-16 mt-8 ">
+    <div className="mt-8 sm:mt-16 ">
       <Title title="Hot Cake" link="/viewmore/" linkName="View More" />
-      <div className=" flex sm:flex-row flex-col flex-wrap sm:justify-between items-center justify-center sm:px-4 ">
+      <div className=" flex flex-col flex-wrap items-center justify-center sm:flex-row sm:justify-between sm:px-4 ">
         {data
           ?.slice(-10)
           .reverse()

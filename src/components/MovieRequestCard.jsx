@@ -1,10 +1,10 @@
-import { HiOutlineTrash } from 'react-icons/hi2';
+import { HiOutlineTrash } from "react-icons/hi2";
 
 export default function MovieRequestCard({ movie, mutate1 }) {
   const handleDelete = async (id) => {
     try {
       await fetch(`/api/help/${id}`, {
-        method: 'DELETE',
+        method: "DELETE",
       });
       mutate1();
     } catch (error) {
@@ -13,7 +13,7 @@ export default function MovieRequestCard({ movie, mutate1 }) {
   };
 
   return (
-    <div className="flex flex-row justify-center items-center py-2">
+    <div className="flex flex-row items-center justify-center py-2">
       <h1>
         {movie.title} ( {movie.createdAt.slice(0, 10)})
       </h1>
@@ -22,7 +22,7 @@ export default function MovieRequestCard({ movie, mutate1 }) {
         className="ml-5"
         onClick={() => handleDelete(movie._id)}
       >
-        <HiOutlineTrash className="h-6 w-6 icon_style " />
+        <HiOutlineTrash className="icon_style h-6 w-6 " />
       </button>
     </div>
   );

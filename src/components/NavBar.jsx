@@ -1,17 +1,17 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import SearchBar from './SearchBar';
+import Image from "next/image";
+import Link from "next/link";
+import SearchBar from "./SearchBar";
 
 const NavBar = () => {
   return (
-    <nav className="flex justify-between w-full">
+    <nav className="flex w-full justify-between">
       <Link href="/">
         <Image
           src="/assets/images/fawflix-logo.png"
           alt="FawFlix Logo"
           width={400}
           height={100}
-          className="cursor-pointer sm:w-56 sm:h-16 w-44 my-5"
+          className="my-5 w-44 cursor-pointer sm:h-16 sm:w-56"
         />
       </Link>
       <SearchBar />

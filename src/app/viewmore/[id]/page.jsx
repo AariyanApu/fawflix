@@ -1,9 +1,9 @@
-'use client';
-import MovieCard from '@/components/MovieCard';
-import MovieCardLoading from '@/components/MovieCardLoading';
-import Title from '@/components/Title';
-import useUser from '@/utils/GetDataApi';
-import { filterPrompts } from '@/utils/data';
+"use client";
+import MovieCard from "@/components/MovieCard";
+import MovieCardLoading from "@/components/MovieCardLoading";
+import Title from "@/components/Title";
+import useUser from "@/utils/GetDataApi";
+import { filterPrompts } from "@/utils/data";
 
 export default async function ViewMore({ params }) {
   const id = params.id;
@@ -13,9 +13,9 @@ export default async function ViewMore({ params }) {
   const movies = filterPrompts(id, data);
   if (isLoading) return <MovieCardLoading />;
   return (
-    <div className="sm:mt-16 mt-8 ">
+    <div className="mt-8 sm:mt-16 ">
       <Title title={`All ${id} Movies `} link="http://localhost:3000" />
-      <div className=" flex sm:flex-row flex-col flex-wrap sm:justify-between items-center justify-center sm:px-4 ">
+      <div className=" flex flex-col flex-wrap items-center justify-center sm:flex-row sm:justify-between sm:px-4 ">
         {movies?.reverse().map((movie) => (
           <MovieCard
             key={movie._id}

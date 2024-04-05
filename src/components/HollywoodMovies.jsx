@@ -1,27 +1,27 @@
-'use client';
-import { FreeMode, Navigation } from 'swiper';
-import 'swiper/css';
-import 'swiper/css/free-mode';
-import 'swiper/css/navigation';
-import { Swiper, SwiperSlide } from 'swiper/react';
+"use client";
+import { FreeMode, Navigation } from "swiper";
+import "swiper/css";
+import "swiper/css/free-mode";
+import "swiper/css/navigation";
+import { Swiper, SwiperSlide } from "swiper/react";
 
-import useUser from '@/utils/GetDataApi';
-import { filterPrompts } from '@/utils/data';
-import MovieCard from './MovieCard';
-import Title from './Title';
+import useUser from "@/utils/GetDataApi";
+import { filterPrompts } from "@/utils/data";
+import MovieCard from "./MovieCard";
+import Title from "./Title";
 
 export default function HollywoodMovieList() {
   const { data, isLoading, isError } = useUser();
-  const movies = filterPrompts('English', data);
+  const movies = filterPrompts("English", data);
 
   const lastTenMovies = movies?.slice(-10).reverse();
 
   return (
-    <div className='sm:mt-16 mt-8 '>
+    <div className="mt-8 sm:mt-16 ">
       <Title
-        title='Hollywood Movies'
-        link='/viewmore/english'
-        linkName='View More'
+        title="Hollywood Movies"
+        link="/viewmore/english"
+        linkName="View More"
       />
       <Swiper
         navigation={true}
@@ -37,14 +37,14 @@ export default function HollywoodMovieList() {
         }}
         freeMode={true}
         modules={[FreeMode, Navigation]}
-        className='mySwiper sm:w-[1280px] w-96 h-fit  '
+        className="mySwiper h-fit w-96 sm:w-[1280px]  "
       >
         {lastTenMovies?.map((movie) => (
-          <SwiperSlide key={movie.imageLink} className='movie_card_portrait'>
+          <SwiperSlide key={movie.imageLink} className="movie_card_portrait">
             <MovieCard
               movie={movie}
-              customStyles='movie_card h-[350px] w-[230px] mx-auto'
-              imageStyles='portrait_img  '
+              customStyles="movie_card h-[350px] w-[230px] mx-auto"
+              imageStyles="portrait_img  "
             />
           </SwiperSlide>
         ))}
